@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Login from "./pages/login/Login";
 import jwtDecode from "jwt-decode";
+import Header from "./components/layout/Header";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("authToken"));
@@ -29,14 +30,17 @@ function App() {
 
   return (
     <>
-      {token ? (
+      {/* {token ? (
         <div>
           <h1>Welcome!</h1>
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
         <Login onLogin={handleLogin} />
-      )}
+      )} */}
+      <div class="font-vazirmatn text-lg">
+        <Header />
+      </div>
     </>
   );
 }

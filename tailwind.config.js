@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        vazir: ['Vazirmatn', 'sans-serif'], // تعریف فونت وزیری
+      }
+    },
   },
   plugins: [],
 }
