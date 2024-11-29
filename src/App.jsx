@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Login from "./pages/login/Login";
 import jwtDecode from "jwt-decode";
-import Header from "./components/layout/Header";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
 function App() {
   const [token, setToken] = useState(localStorage.getItem("authToken"));
 
@@ -39,7 +39,7 @@ function App() {
         <Login onLogin={handleLogin} />
       )} */}
       <div class="font-vazirmatn text-lg">
-        <Header />
+        <Layout />
       </div>
     </>
   );
