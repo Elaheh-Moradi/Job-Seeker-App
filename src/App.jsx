@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Login from "./pages/login/Login";
 import jwtDecode from "jwt-decode";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/layout/Layout";
+import { BrowserRouter, Routes, Route, Router, createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "../src/pages/layout/Layout.jsx";
+import OfferCart from "./components/OfferCart.jsx";
+import HomePage from "./pages/home/HomePage.jsx";
 function App() {
   const [token, setToken] = useState(localStorage.getItem("authToken"));
 
@@ -28,8 +30,15 @@ function App() {
     }
   }, [token]);
 
+const router=createBrowserRouter([{
+  path:'/', element:<Layout/>,children:[
+    {index:true, element:<HomePage/>}
+  ]
+}])
+
   return (
     <>
+
       {/* {token ? (
         <div>
           <h1>Welcome!</h1>
@@ -38,8 +47,10 @@ function App() {
       ) : (
         <Login onLogin={handleLogin} />
       )} */}
-      <div class="font-vazirmatn text-lg">
-        <Layout />
+
+      <div >
+        <RouterProvider router={router}/>
+        
       </div>
     </>
   );

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        vazir: ['Vazirmatn', 'sans-serif'], // تعریف فونت وزیری
+        vazirmatn: ['Vazirmatn', 'sans-serif'], // تعریف فونت وزیری
       }
     },
   },
