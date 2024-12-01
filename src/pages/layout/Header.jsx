@@ -100,7 +100,7 @@ export default function Header() {
           </div>
           {/* DropDown Button */}
           <div className=" pt-6 pb-6 pl-3.5 pr-3.5">
-            <div dir="rtl" className=" relative inline-block" ref={dropdownRef}>
+            <div dir="rtl" className=" relative " ref={dropdownRef}>
               <button
                 id="dropdownDefaultButton"
                 data-dropdown-toggle="dropdown"
@@ -151,7 +151,7 @@ export default function Header() {
               )}
             </div>
           </div>
-          <div className="relative inline-block">
+          <div className="relative flex items-center justify-center">
             {/* Bell Icon */}
             <NotificationsNoneRoundedIcon
               fontSize="medium"
@@ -159,8 +159,8 @@ export default function Header() {
             />
 
             {/* Badge */}
-            <div className="absolute top-0 left-0 bg-red-500 text-white text-xs rounded-[4px] w-4 h-4 flex items-center justify-center translate-x-[-3px] -translate-y-[0px]">
-              3
+            <div className="absolute top-0 left-0 bg-red-500 text-white text-[11px] rounded-[4px] w-4 h-4 flex items-center justify-center translate-x-[-4px] -translate-y-[3px]">
+             <p className="text-center">3</p>
             </div>
           </div>
         </div>

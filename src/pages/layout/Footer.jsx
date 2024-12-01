@@ -1,15 +1,15 @@
 import TelegramIcon from "@mui/icons-material/Telegram";
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function Footer() {
   return (
     <>
       <footer
         dir="rtl"
-        className="bg-[#444] text-white text-center py-4 fixed bottom-0 w-full "
+        className="bg-[#444] text-white text-center py-4  bottom-0 w-full "
       >
-        <div className="flex flex-col md:flex-row justify-center pr-28">
+        <div className="flex justify-center pr-28">
           {/* Section 1: Navigation Links */}
           <div className="flex flex-col items-start w-1/3">
             <p className="text-[#999] text-[16px] text-right mb-2 w-4/5 border-b border-gray-500 pb-2">
@@ -54,14 +54,14 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4 space-x-reverse items-start text-[#f0f0f0] ">
               <a href="#" aria-label="Telegram" className="hover:text-white">
-              <TelegramIcon size={20} />
-            </a>
-            <a href="#" aria-label="Instagram" className="hover:text-white">
-              <InstagramIcon size={20} />
-            </a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-white">
-              <LinkedInIcon size={20} />
-            </a>
+                <TelegramIcon size={20} />
+              </a>
+              <a href="#" aria-label="Instagram" className="hover:text-white">
+                <InstagramIcon size={20} />
+              </a>
+              <a href="#" aria-label="LinkedIn" className="hover:text-white">
+                <LinkedInIcon size={20} />
+              </a>
             </div>
           </div>
         </div>
