@@ -13,6 +13,7 @@
   ],
   "jobOffers":[
     {
+      "id":1,
       "jobTitle":"برنامه‌نویس فرانت اند(Front-End)",
       "organizationTitle-fa":"شبکه اطلاع رسانی طلا، سکه و ارز",
       "organizationTitle-en":"TGJU",
@@ -25,6 +26,7 @@
       "image-src":"./src/assets/images/organization-icon/TGJU.webp"
     },
     {
+      "id":2,
       "jobTitle":"برنامه‌نویس فرانت اند (ASP.Net Front-End)",
       "organizationTitle-fa":"رایانت ایرسا",
       "organizationTitle-en":"Irsa Rayanet",
@@ -37,6 +39,7 @@
       "image-src":"./src/assets/images/organization-icon/Irsa-Rayanet.webp"
     },
     {
+      "id":3,
       "jobTitle":"برنامه‌نویس ارشد فرانت اند (Front-End-دورکاری)",
       "organizationTitle-fa":"ابرسام داده گستر شمال",
       "organizationTitle-en":"Abarsam Dade Gostar Shoma",
@@ -49,6 +52,7 @@
       "image-src":"./src/assets/images/organization-icon/Abarsam-Dade-Gostar-Shoma.webp"
     },
     {
+      "id":4,
       "jobTitle":"برنامه‌نویس فرانت اند (Front-End-Mid Level)",
       "organizationTitle-fa":"موسسه خدمات مدیریت و فناوری رشد قلم‌چی",
       "organizationTitle-en":"GMTII",
@@ -61,6 +65,7 @@
       "image-src":"./src/assets/images/organization-icon/GMTII.webp"
     },
     {
+      "id":5,
       "jobTitle":"برنامه‌نویس ارشد فرانت اند (Senior Front-End Developer)",
       "organizationTitle-fa":"آریانا پرداز آینده",
       "organizationTitle-en":"Arpa",
@@ -73,6 +78,7 @@
       "image-src":"./src/assets/images/organization-icon/Arpa.webp"
     },
     {
+      "id":6,
       "jobTitle":"برنامه‌نویس دات نت(ASP.NET)",
       "organizationTitle-fa":"وب 24",
       "organizationTitle-en":"Web24",
@@ -85,6 +91,7 @@
       "image-src":"./src/assets/images/organization-icon/Arpa.webp"
     },
     {
+      "id":7,
       "jobTitle":"برنامه‌نویس فرانت اند (Front-End-vue js)",
       "organizationTitle-fa":"رد لیمو",
       "organizationTitle-en":"Red Limoo",

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="0.6em" width="0.6em" viewBox="0 0 24 24">
+  <g stroke="rgb(204, 204, 204)" stroke-width="2">
+    <!-- Frame of the list with thicker lines -->
+    <rect x="1" y="1" width="22" height="22" rx="3" stroke="rgb(204, 204, 204)" fill="none"/>
+    
+    <!-- Horizontal Lines (List Items) with thicker lines -->
+    <path d="M3,5h18"/>
+    <path d="M3,9h18"/>
+    <path d="M3,13h18"/>
+    
+    <!-- Shortened Last Line with thicker lines -->
+    <path d="M3,17h12"/>
+    
+    <!-- Lowered Checkmark with thicker lines -->
+    <!-- <path d="M16 16l2 2l4 -4" stroke-width="3" fill="none"/> -->
+  </g>
+</svg>
