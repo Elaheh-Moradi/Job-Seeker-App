@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Login from "./pages/login/Login";
 import jwtDecode from "jwt-decode";
-import { BrowserRouter, Routes, Route, Router, createBrowserRouter, RouterProvider } from "react-router-dom";
+import {createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../src/pages/layout/Layout.jsx";
-import OfferCart from "./components/OfferCart.jsx";
-import HomePage from "./pages/home/HomePage.jsx";
+import SearchJobPage from "./pages/menu/SearchJobPage.jsx";
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem("authToken"));
 
@@ -32,7 +32,7 @@ function App() {
 
 const router=createBrowserRouter([{
   path:'/', element:<Layout/>,children:[
-    {index:true, element:<HomePage/>}
+    {path:'/search-job', element:<SearchJobPage/>}
   ]
 }])
 

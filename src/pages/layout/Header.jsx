@@ -5,6 +5,7 @@ import DiamondRoundedIcon from "@mui/icons-material/DiamondRounded";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const userDashboard = [
   "درخواست های من",
@@ -58,12 +59,12 @@ export default function Header() {
             <span class="absolute top-0 bottom-0 right-0 w-0.5 h-full bg-[rgba(0, 0, 0, .2)] shadow-[0_0px_1px_rgba(255,255,255,0.5)]"></span>
           </li>
           <li className="pt-6 pb-6 pl-3.5 pr-3.5 relative hover:bg-[#555]">
-            <div class="flex items-center text-[#fff] text-[14px] font-medium leading-relaxed">
+            <Link to="/search-job" class="flex items-center text-[#fff] text-[14px] font-medium leading-relaxed">
               <SearchRoundedIcon
                 style={{ color: "#fff", fontSize: "1.5rem" }}
               />
               جستجوی مشاغل
-            </div>
+            </Link>
             <span class="absolute top-0 bottom-0 right-0 w-0.5 h-full bg-[rgba(0, 0, 0, .2)] shadow-[0_0px_1px_rgba(255,255,255,0.5)] "></span>
           </li>
           <li className="pt-6 pb-6 pl-3.5 pr-3.5 relative hover:bg-[#555]">
