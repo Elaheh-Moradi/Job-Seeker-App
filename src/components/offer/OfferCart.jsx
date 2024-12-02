@@ -27,7 +27,7 @@ export default function OfferCart(props) {
           className={` flex justify-start py-6 border-r-4 ${
             props.emergency ? "border-r-red-600" : "border-[#e7e7e7]"
           }
-          ${props.index !== props.length - 1 && "pb-0 mb-0"}
+          ${props.index !== props.length - 1 && "pb-5 mb-0"}
           `}
         >
           {/* job icon */}
