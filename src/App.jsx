@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Login from "./pages/login/Login";
 import jwtDecode from "jwt-decode";
-import {createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+  useNavigate,
+} from "react-router-dom";
 import Layout from "../src/pages/layout/Layout.jsx";
 import SearchJobPage from "./pages/menu/SearchJobPage.jsx";
 import HomePage from "./pages/menu/HomePage.jsx";
@@ -11,6 +16,8 @@ function App() {
 
   const handleLogin = (newToken) => {
     setToken(newToken);
+    // localStorage.setItem("authToken", token); // Save token to localStorage
+    // navigate("/home");
   };
 
   const handleLogout = () => {
@@ -38,60 +45,38 @@ function App() {
     return children; // Render the child components if authenticated
   };
 
-
-// const router=createBrowserRouter([{
-//   path:'/', element:<Layout/>,children:[
-//     {path:"/home",element:<HomePage/>},
-//     {path:"/login", element:<Login />},
-//     {path:'/search-job', element:<SearchJobPage/>}
-//   ]
-// }])
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/home",
-        element: (
-          <ProtectedRoute>
-            <HomePage onLogout={handleLogout} />
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "/search-job",
-        element: (
-          <ProtectedRoute>
-            <SearchJobPage />
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "/login",
-        element: <Login onLogin={handleLogin} />,
-      },
-    ],
-  },
-]);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: token ? <Layout /> : <Navigate to="/login" replace />,
+      children: [
+        {
+          path: "/home",
+          element: (
+            <ProtectedRoute>
+              <HomePage onLogout={handleLogout} />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/search-job",
+          element: (
+            <ProtectedRoute>
+              <SearchJobPage />
+            </ProtectedRoute>
+          ),
+        },
+      ],
+    },
+    {
+      path: "/login",
+      element: <Login onLogin={handleLogin} />,
+    },
+  ]);
 
   return (
     <>
-
-      {/* {token ? (
-        <div>
-          <h1>Welcome!</h1>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-      ) : (
-        <Login onLogin={handleLogin} />
-      )} */}
-
-      <div >
-        <RouterProvider router={router}/>
-        
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }
