@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import Label from "../../components/Lable";
@@ -11,30 +12,78 @@ export default function Login({ onLogin }) {
   });
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
 
   const handleSubmit = async (e) => {
+    /************************************/
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:4000/users", {
         email: inputs.email,
         password: inputs.password,
       });
-      if (!response.ok) {
-        // Extract error message from response or set a default
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Login failed. Please try again.");
-      }
 
-      const { token } = response.data;
-      localStorage.setItem("authToken", token); // Save token to localStorage
-      onLogin(token);
-    } catch (err) {
-      setError("آدرس ایمیل یا رمزعبور اشتباه است."); // Set error message for display
+      // Check if the token exists in the response
+      if (response.status === 200) {
+        const token = response.data.token;
+        if (token) {
+          console.log("Token received:", token);
+          localStorage.setItem("authToken", token); // Save token to localStorage
+          onLogin(token); // Call onLogin with token
+          setError(""); // Clear any error
+          navigate("/home"); // Redirect to home page
+        } 
+        // else {
+        //   setError("Login successful, but token is missing.");
+        // }
+      } else {
+        setError("مشکلی در سرور ایجاد شده است.");
+      }
+    } catch (error) {
+      // console.error("Caught an error:", error);
+
+      // if (error.response) {
+      //   // If the server returned an error response
+      //   console.error("Error response data:", error.response.data);
+      //   setError(
+      //     error.response.data.error || "An error occurred. Please try again."
+      //   );
+      // } else if (error.message) {
+      //   // General network or parsing error
+      //   setError(error.message);
+      // } else {
+      //   setError("An unknown error occurred.");
+      // }
+      setError("آدرس ایمیل یا رمز عبور اشتباه است.")
     }
+
+    /************************************/
+
+    // e.preventDefault();
+    // try {
+    //   const response = await axios.post("http://localhost:4000/users", {
+    //     email: inputs.email,
+    //     password: inputs.password,
+    //   });
+
+    //   if (!response.ok) {
+    //     // Extract error message from response or set a default
+    //     const errorData = await response.json();
+    //     throw new Error(errorData.message || "Login failed. Please try again.");
+    //   }
+
+    //   const { token } = response.data;
+    //   localStorage.setItem("authToken", token); // Save token to localStorage
+    //   onLogin(token);
+    //   navigate("/home");
+
+    // } catch (err) {
+    //   setError("آدرس ایمیل یا رمزعبور اشتباه است."); // Set error message for display
+    // }
   };
 
   function handleChangeInput(event, identifier) {
@@ -42,7 +91,7 @@ export default function Login({ onLogin }) {
       ...prevInputs,
       [identifier]: event.target.value,
     }));
-    console.log(event);
+    // console.log(event);
   }
   return (
     <div className="h-screen flex items-center justify-center bg-gray-100">
@@ -121,10 +170,10 @@ export default function Login({ onLogin }) {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 28 28"
-                    stroke="currentColor"
-                    strokeWidth={2}
+                  fill="none"
+                  viewBox="0 0 28 28"
+                  stroke="currentColor"
+                  strokeWidth={2}
                 >
                   <path
                     clip-rule="evenodd"
@@ -137,7 +186,6 @@ export default function Login({ onLogin }) {
                     fill="#000000"
                   />
                 </svg>
-             
               )
             }
           />

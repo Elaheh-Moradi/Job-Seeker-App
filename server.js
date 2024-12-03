@@ -28,6 +28,7 @@ server.post("/users", (req, res) => {
   const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, {
     expiresIn: TOKEN_EXPIRATION,
   });
+
   res.status(200).json({ token });
 });
 
