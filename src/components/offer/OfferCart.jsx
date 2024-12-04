@@ -34,7 +34,7 @@ export default function OfferCart(props) {
           <div className="flex justify-center" style={{ width: "15%" }}>
             <img
               src={props.imageSrc}
-              className="h-[64px] w-[64px] bg-[#f5f5f5]"
+              className="h-[64px] w-[64px] bg-[#f5f5f5] border-[1px] border-gray-100"
             />
           </div>
           {/* the midle part in offer cart */}
