@@ -2,6 +2,7 @@ import BuildingIcon from "../../assets/icons/Building.svg";
 import ContractIcon from "../../assets/icons/contract.svg";
 import PlaceIcon from "@mui/icons-material/Place";
 import Button from "../Button.jsx";
+import DefaulImage from "../../assets/images/organization-icon/Default.webp"
 import { useState } from "react";
 
 export default function OfferCart(props) {
@@ -20,22 +21,29 @@ export default function OfferCart(props) {
       <div className="relative">
         {/* Line above the first item */}
         {props.index === 0 && (
-          <div className="absolute top-0 left-0 right-0 h-px bg-[#e7e7e7]"></div>
+          <div className="absolute top-0 left-0 right-0 h-px bg-[#e7e7e7] "></div>
         )}
         {/* each item of list */}
         <div
-          className={` flex justify-start py-6 border-r-4 ${
-            props.emergency ? "border-r-red-600" : "border-[#e7e7e7]"
+          className={` flex justify-start py-6 border-[1px] border-t-0 border-[#e7e7e7] border-r-4 ${
+            props.emergency ? "border-r-red-600" : "border-r-[#e7e7e7]"
           }
           ${props.index !== props.length - 1 && "pb-5 mb-0"}
           `}
         >
           {/* job icon */}
           <div className="flex justify-center" style={{ width: "15%" }}>
-            <img
-              src={props.imageSrc}
-              className="h-[64px] w-[64px] bg-[#f5f5f5] border-[1px] border-gray-100"
-            />
+            {props.imageSrc ? (
+              <img
+                src={props.imageSrc}
+                className="h-[64px] w-[64px] bg-[#f5f5f5] border-[1px] border-gray-100"
+              />
+            ) : (
+              <img
+                src={DefaulImage}
+                className="h-[64px] w-[64px] bg-[#f5f5f5] border-[1px] border-gray-100"
+              />
+            )}
           </div>
           {/* the midle part in offer cart */}
           <div dir="rtl" className="w-3/5 flex flex-col">

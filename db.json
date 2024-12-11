@@ -206,6 +206,239 @@
       "duration":"امروز",
       "emergency":false,
       "image-src":"./src/assets/images/organization-icon/Tojet.webp"
+    },
+    {
+      "id":16,
+      "jobTitle":"برنامه‌نویس NodeJs) Back-End-بجنورد-دورکاری)",
+      "organizationTitle-fa":"صنعت گستر مبتکر",
+      "organizationTitle-en":"Sanat Gostar",
+      "orgState":"خراسان شمالی",
+      "orgCity":"بجنورد",
+      "contractType":"قرارداد دورکاری",
+      "salary":"حقوق توافقی",
+      "duration":"امروز",
+      "emergency":true,
+      "image-src":null
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "id":1,
+      "jobTitle":"برنامه‌نویس فرانت اند(Front-End)",
+      "organizationTitle-fa":"شبکه اطلاع رسانی طلا، سکه و ارز",
+      "organizationTitle-en":"TGJU",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق توافقی",
+      "duration":"۲۴ روز پیش",
+      "emergency":false,
+      "image-src":"./src/assets/images/organization-icon/TGJU.webp"
+    },
+    {
+      "id":2,
+      "jobTitle":"برنامه‌نویس فرانت اند (ASP.Net Front-End)",
+      "organizationTitle-fa":"رایانت ایرسا",
+      "organizationTitle-en":"Irsa Rayanet",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق از ۲۴,۰۰۰,۰۰۰ تومان",
+      "duration":"",
+      "emergency":true,
+      "image-src":"./src/assets/images/organization-icon/Irsa-Rayanet.webp"
+    },
+    {
+      "id":3,
+      "jobTitle":"برنامه‌نویس ارشد فرانت اند (Front-End-دورکاری)",
+      "organizationTitle-fa":"ابرسام داده گستر شمال",
+      "organizationTitle-en":"Abarsam Dade Gostar Shoma",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد دورکاری",
+      "salary":"حقوق از ۳۵,۰۰۰,۰۰۰ تومان",
+      "duration":"",
+      "emergency":true,
+      "image-src":"./src/assets/images/organization-icon/Abarsam-Dade-Gostar-Shoma.webp"
+    },
+    {
+      "id":4,
+      "jobTitle":"برنامه‌نویس فرانت اند (Front-End-Mid Level)",
+      "organizationTitle-fa":"موسسه خدمات مدیریت و فناوری رشد قلم‌چی",
+      "organizationTitle-en":"GMTII",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق توافقی",
+      "duration":"۳۲ روز پیش",
+      "emergency":false,
+      "image-src":"./src/assets/images/organization-icon/GMTII.webp"
+    },
+    {
+      "id":5,
+      "jobTitle":"برنامه‌نویس ارشد فرانت اند (Senior Front-End Developer)",
+      "organizationTitle-fa":"آریانا پرداز آینده",
+      "organizationTitle-en":"Arpa",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق توافقی",
+      "duration":"",
+      "emergency":true,
+      "image-src":"./src/assets/images/organization-icon/Arpa.webp"
+    },
+    {
+      "id":6,
+      "jobTitle":"برنامه‌نویس دات نت(ASP.NET)",
+      "organizationTitle-fa":"وب 24",
+      "organizationTitle-en":"Web24",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق توافقی",
+      "duration":"۵ روز پیش",
+      "emergency":false,
+      "image-src":"./src/assets/images/organization-icon/Arpa.webp"
+    },
+    {
+      "id":7,
+      "jobTitle":"برنامه‌نویس فرانت اند (Front-End-vue js)",
+      "organizationTitle-fa":"رد لیمو",
+      "organizationTitle-en":"Red Limoo",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق توافقی",
+      "duration":"",
+      "emergency":true,
+      "image-src":"./src/assets/images/organization-icon/Red-Limoo.webp"
+    },
+    {
+      "id":8,
+      "jobTitle":"برنامه‌نویس Vue3)Front-End)",
+      "organizationTitle-fa":"زیوش",
+      "organizationTitle-en":"Zeevash",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق توافقی",
+      "duration":"۱۰ روز پیش",
+      "emergency":false,
+      "image-src":"./src/assets/images/organization-icon/Zeevash.webp"
+    },
+    {
+      "id":9,
+      "jobTitle":"برنامه‌نویس Full Stack (گرگان)",
+      "organizationTitle-fa":"الگوریتم سازان آرن",
+      "organizationTitle-en":"Algoritm Sazan ARN",
+      "orgState":"گلستان",
+      "orgCity":"گرگان",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق از ۲۰,۰۰۰,۰۰۰ تومان",
+      "duration":"",
+      "emergency":true,
+      "image-src":"./src/assets/images/organization-icon/Algoritm-Sazan-ARN.webp"
+    },
+    {
+      "id":10,
+      "jobTitle":"Front-End Developer (مشهد)",
+      "organizationTitle-fa":"گراف",
+      "organizationTitle-en":"Graph",
+      "orgState":"خراسان رضوی",
+      "orgCity":"مشهد",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق توافقی",
+      "duration":"",
+      "emergency":true,
+      "image-src":"./src/assets/images/organization-icon/Graph.webp"
+    },
+    {
+      "id":11,
+      "jobTitle":"برنامه‌نویس Net) Full-Stack.-شیراز)",
+      "organizationTitle-fa":"پویا رایانه دنا",
+      "organizationTitle-en":"PRDCo",
+      "orgState":"فارس",
+      "orgCity":"شیراز",
+      "contractType":"قرارداد دورکاری",
+      "salary":"حقوق توافقی",
+      "duration":"۲۴ روز پیش",
+      "emergency":false,
+      "image-src":"./src/assets/images/organization-icon/PRDCo.webp"
+    },
+    {
+      "id":12,
+      "jobTitle":"برنامه‌نویس فرانت اند(Front-End)",
+      "organizationTitle-fa":"عدلا",
+      "organizationTitle-en":"Addlaw",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق از ۳۰,۰۰۰,۰۰۰ تومان",
+      "duration":"امروز",
+      "emergency":false,
+      "image-src":"./src/assets/images/organization-icon/Addlaw.webp"
+    },
+    {
+      "id":13,
+      "jobTitle":"WordPress Developer (توسعه دهنده وردپرس-دورکاری)",
+      "organizationTitle-fa":"پیکان",
+      "organizationTitle-en":"Peykan",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد دورکاری",
+      "salary":"حقوق از ۲۰,۰۰۰,۰۰۰ تومان",
+      "duration":"",
+      "emergency":true,
+      "image-src":"./src/assets/images/organization-icon/Peykan.webp"
+    },
+    {
+      "id":14,
+      "jobTitle":"Front-End Developer (Vue-Nuxt-مشهد)",
+      "organizationTitle-fa":"یارا نرم افزار املاک(شعبه تهران)",
+      "organizationTitle-en":"Yara Narm Afzar Amlak",
+      "orgState":"خراسان رضوی",
+      "orgCity":"مشهد",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق توافقی",
+      "duration":"",
+      "emergency":true,
+      "image-src":"./src/assets/images/organization-icon/Yara-Narm-Afzar-Amlak.webp"
+    },
+    {
+      "id":15,
+      "jobTitle":"برنامه‌نویس هوش مصنوعی (AI-دورکاری)",
+      "organizationTitle-fa":"توجت",
+      "organizationTitle-en":"Tojet",
+      "orgState":"تهران",
+      "orgCity":"تهران",
+      "contractType":"قرارداد تمام‌وقت",
+      "salary":"حقوق توافقی",
+      "duration":"امروز",
+      "emergency":false,
+      "image-src":"./src/assets/images/organization-icon/Tojet.webp"
+    },
+    {
+      "id":16,
+      "jobTitle":"برنامه‌نویس NodeJs) Back-End-بجنورد-دورکاری)",
+      "organizationTitle-fa":"صنعت گستر مبتکر",
+      "organizationTitle-en":"Sanat Gostar",
+      "orgState":"خراسان شمالی",
+      "orgCity":"بجنورد",
+      "contractType":"قرارداد دورکاری",
+      "salary":"حقوق توافقی",
+      "duration":"امروز",
+      "emergency":true,
+      "image-src":null
     }
   ]
 }
