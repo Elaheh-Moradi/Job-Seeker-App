@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Input from "../Input";
 import useFetch from "../../hooks/useFetch";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { useDispatch } from "react-redux";
+import { cityActions } from "../../store/city-slice";
 
 export default function SearchCityDropdown(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("همه استان‌ها");
   const { data } = useFetch("http://localhost:3000/stateOptions");
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState(data);
+
+  const dispatch = useDispatch();
 
   const ArrowDown = () => (
     <svg
@@ -34,12 +40,25 @@ export default function SearchCityDropdown(props) {
     </svg>
   );
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+    setQuery("");
+  };
 
   const handleOptionClick = (option) => {
-    setSelectedOption(option);
+    const filteredId = data.filter((item) => item.id === +option);
+    setSelectedOption(filteredId[0].name);
+    dispatch(cityActions.setCityId(+option));
+    dispatch(cityActions.setCityName(filteredId[0].name))
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    const filteredResults = data.filter((item) => {
+      return item.name.includes(query);
+    });
+    setResults(filteredResults);
+  }, [query, data]);
 
   return (
     <>
@@ -67,14 +86,22 @@ export default function SearchCityDropdown(props) {
         {isOpen && (
           <ul className="absolute max-h-[170px] overflow-scroll overflow-x-hidden  top-12 left-0 w-full bg-white border border-gray-300 rounded-md shadow-md z-10">
             <li>
-              <Input autoFocus={true} className="w-[90%] mr-4 mt-3 mb-3 focus:outline-none focus:border-[#3ab1e4] focus:border-[1px] p-2 border-[#3ab1e4] border-[1px] text-[12px] text-gray-500 " placeholder="جستجو..."/>
+              <Input
+                autoFocus={true}
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="جستجو..."
+                className="w-[90%] mr-4 mt-3 mb-3 focus:outline-none focus:border-[#3ab1e4] focus:border-[1px] p-2 border-[#3ab1e4] border-[1px] text-[12px] text-gray-500 "
+              />
             </li>
-            {data.map((option, index) => (
+            {results.map((option, index) => (
               <>
                 <li
                   key={index}
-                  className={`pt-1 pb-1 pr-5 ${index===1?"selected":""} hover:bg-gray-100 cursor-pointer text-[#9d9d9d]`}
-                  onClick={() => handleOptionClick(`${option.name}`)}
+                  className={`pt-1 pb-1 pr-5 ${
+                    index === 1 ? "selected" : ""
+                  } hover:bg-gray-100 cursor-pointer text-[#9d9d9d]`}
+                  onClick={() => handleOptionClick(`${option.id}`)}
                 >
                   {option.name}
                 </li>

@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import citySlice from "./city-slice";
+import jobSlice from "./job-slice";
 
 export const store = configureStore({
   reducer: {
     city: citySlice.reducer,
+    job:jobSlice.reducer
   },
 });

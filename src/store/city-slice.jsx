@@ -5,15 +5,18 @@ const citySlice = createSlice({
   name: "city",
   initialState: {
     cities: [],
+    cityName:null,
+    cityID:null
   },
-  reducers: {},
+  reducers: {
+    setCityId:(state,action)=>{
+      state.cityID=action.payload
+    },
+    setCityName:(state,action)=>{
+      state.cityName=action.payload
+    }
+  },
 });
-
-// export const fetchCities = () => {
-//   return (dispatch) => {
-//   const { data, error, loading } = useFetch("http://localhost:3000/stateOptions");
-//   };
-// };
 
 export const cityActions = citySlice.actions;
 
