@@ -6,6 +6,8 @@ const jobSlice = createSlice({
     jobs: [],
     className:null,
     classId: null,
+    filterItems:null,
+    typeOption:null
   },
   reducers: {
     setJobs: (state, action) => {
@@ -16,6 +18,12 @@ const jobSlice = createSlice({
     },
     setClassName:(state, action)=>{
       state.className=action.payload;
+    },
+    setFilterItems:(state,action)=>{
+      state.filterItems=action.payload
+    },
+    setTypeOption:(state,action)=>{
+      state.typeOption=action.payload
     }
   },
 });

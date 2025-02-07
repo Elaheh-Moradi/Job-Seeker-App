@@ -9,7 +9,7 @@ const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
 const SECRET_KEY = "your_secret_key";
-const TOKEN_EXPIRATION = "1h";
+const TOKEN_EXPIRATION = "23h";
 
 server.use(middlewares);
 server.use(bodyParser.json());

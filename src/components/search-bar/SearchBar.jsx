@@ -4,11 +4,13 @@ import Input from "../Input";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import SearchCityDropdown from "../search-dropdown/SearchCityDropdown";
 import SearchClassDropdown from "../search-dropdown/SearchClassDropdown";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useDispatch, useSelector } from "react-redux";
 import { jobActions } from "../../store/job-slice";
 import { useSearchParams } from "react-router-dom";
+import { filterActions } from "../../store/filter-slice";
+import { cityActions } from "../../store/city-slice";
 
 function debounce(func, delay) {
   let timeout;
@@ -21,12 +23,14 @@ function debounce(func, delay) {
 export default function SearchBar() {
   const [query, setQuery] = useState("");
   const { data } = useFetch("http://localhost:3000/jobOffers");
-  const [results, setResults] = useState(data);
-  const [finalResult, setFinalResult] = useState(data);
   const classId = useSelector((state) => state.job.classId);
   const cityId = useSelector((state) => state.city.cityID);
   const className = useSelector((state) => state.job.className);
   const cityName = useSelector((state) => state.city.cityName);
+  const cityOption = useSelector((state) => state.city.option);
+  const typeOption = useSelector((state) => state.job.typeOption);
+  const filterQuery = useSelector((state) => state.filter.searchQuery);
+  const changeQuery = useSelector((state) => state.filter.changeQuery);
   const [searchParams, setSearchParams] = useSearchParams(); //to set filter values in url
 
   const dispatch = useDispatch();
@@ -44,7 +48,6 @@ export default function SearchBar() {
 
   const updateFilters = (params) => {
     const newParams = new URLSearchParams(searchParams);
-
     // Loop through each key-value pair and update the URL
     Object.entries(params).forEach(([key, value]) => {
       if (value) newParams.set(key, value);
@@ -54,8 +57,9 @@ export default function SearchBar() {
     setSearchParams(newParams);
   };
 
-  const handleFilterAllFilds = (searchQuery) => {
+  const handleFilterAllFilds = (searchQuery ) => {
     let filteredResults = null;
+
     if (searchQuery === "") {
       filteredResults = data;
     } else {
@@ -102,18 +106,21 @@ export default function SearchBar() {
     } else if (classId === null && cityId === null) {
       return filteredResults;
     }
+    
   };
 
   const handleSearch = (searchQuery) => {
     const finalFilterResult = handleFilterAllFilds(searchQuery);
     dispatch(jobActions.setJobs(finalFilterResult));
-
     updateFilters({
       title: searchQuery,
       city: cityName,
       type: className,
     });
   };
+useEffect(()=>{
+  debouncedSearch(filterQuery);
+},[changeQuery,cityId,classId])
 
   useEffect(() => {
     dispatch(jobActions.setJobs(data));
@@ -122,6 +129,16 @@ export default function SearchBar() {
   const debouncedSearch = debounce(handleSearch, 300);
 
   const handleButtonClick = () => {
+    dispatch(cityActions.setCityId(cityOption))
+    dispatch(jobActions.setClassId(typeOption))
+    dispatch(filterActions.setSearchQuery(query));
+    dispatch(
+      filterActions.setFilterItems({
+        title: query,
+        city: cityName,
+        type: className,
+      })
+    );
     debouncedSearch(query);
   };
 

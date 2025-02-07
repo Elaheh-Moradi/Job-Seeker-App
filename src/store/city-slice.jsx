@@ -6,7 +6,8 @@ const citySlice = createSlice({
   initialState: {
     cities: [],
     cityName:null,
-    cityID:null
+    cityID:null,
+    option:null
   },
   reducers: {
     setCityId:(state,action)=>{
@@ -14,7 +15,11 @@ const citySlice = createSlice({
     },
     setCityName:(state,action)=>{
       state.cityName=action.payload
+    },
+    setCityOption:(state,action)=>{
+      state.option=action.payload
     }
+    
   },
 });
 

@@ -46,6 +46,8 @@ export default function SearchClassDropdown() {
   };
 
   const handleOptionClick = (option) => {
+        dispatch(jobActions.setTypeOption(+option))
+    
     const filteredId = data.filter((item) => item.id === +option);
     setSelectedOption(filteredId[0].title);
     dispatch(jobActions.setClassId(+option));
