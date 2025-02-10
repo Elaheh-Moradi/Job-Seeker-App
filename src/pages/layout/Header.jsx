@@ -6,6 +6,7 @@ import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import BurgerMenu from "./BurgerMenu";
 
 const userDashboard = [
   "درخواست های من",
@@ -44,7 +45,7 @@ export default function Header() {
     <>
       <div
         dir="rtl"
-        className="flex justify-between  items-center top-0 bg-[#444] h-[10.5vh] fixed w-full z-50"
+        className="flex justify-between  items-center top-0 bg-[#444] h-[10.5vh] fixed w-full z-50 md:hidden "
       >
         {/* The menu on right side of header */}
         <ul
@@ -166,6 +167,7 @@ export default function Header() {
           </div>
         </div>
       </div>
+      <BurgerMenu/>
     </>
   );
 }

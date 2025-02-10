@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "../src/pages/layout/Layout.jsx";
 import SearchJobPage from "./pages/menu/SearchJobPage.jsx";
 import HomePage from "./pages/menu/HomePage.jsx";
+import Test from "./Test.jsx";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("authToken"));
@@ -49,6 +50,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Fallback route */}
+        <Route path="/test" element={<Test/>}></Route>
       <Route
           path="*"
           element={
@@ -75,6 +77,7 @@ function App() {
           <Route index element={<Navigate to="/home" replace />} />
           <Route path="home" element={<HomePage />} />
           <Route path="search-job" element={<SearchJobPage />} />
+
         </Route>
 
       </Routes>

@@ -10,6 +10,11 @@ export default {
         vazirmatn: ['Vazirmatn', 'sans-serif'], // تعریف فونت وزیری
       }
     },
+    screens: {
+      // Use max‑width breakpoints for mobile/tablet overrides:
+      'md': {'max': '1023px'}, // Applies to screens 1023px and below (tablet and mobile)
+      'sm': {'max': '767px'},  // Applies to screens 767px and below (mobile only)
+    },
   },
   plugins: [],
 }
