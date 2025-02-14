@@ -46,12 +46,13 @@ export default function SearchClassDropdown() {
   };
 
   const handleOptionClick = (option) => {
-        dispatch(jobActions.setTypeOption(+option))
-    
+    if (option !== null) {
+      dispatch(jobActions.setTypeOption(+option));
+    }
     const filteredId = data.filter((item) => item.id === +option);
     setSelectedOption(filteredId[0].title);
-    dispatch(jobActions.setClassId(+option));
-    dispatch(jobActions.setClassName(filteredId[0].title))
+    // dispatch(jobActions.setClassId(+option));
+    dispatch(jobActions.setClassName(filteredId[0].title));
     setIsOpen(false);
   };
 
@@ -60,7 +61,6 @@ export default function SearchClassDropdown() {
       return item.title.toLowerCase().includes(query.toLowerCase());
     });
     setResults(filteredResults);
-    
   }, [query, data]);
 
   return (

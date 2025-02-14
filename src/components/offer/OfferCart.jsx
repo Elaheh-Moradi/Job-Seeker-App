@@ -59,12 +59,12 @@ export default function OfferCart(props) {
                   استخدام فوری
                 </span>
               ) : (
-                <span className="text-[#999] text-[12px] font-light inline">{`(${props.duration})`}</span>
+                <span className="text-[#999] text-[12px] inline">{`(${props.duration})`}</span>
               )}
             </div>
             {/* organizatio title in farsi and english */}
             <div className="flex flex-col leading-7">
-              <div className="flex text-[#777] text-[13px] font-thin ">
+              <div className="flex text-[#777] text-[13px] font-light ">
                 <div className="flex items-center">
                   {/* building Icon */}
                   <img src={BuildingIcon} className="ml-1" />
@@ -74,7 +74,7 @@ export default function OfferCart(props) {
                 <div>{props.organizationTitleEn}</div>
               </div>
               {/* location of organization */}
-              <div className="flex items-center text-[#777] text-[13px] font-thin">
+              <div className="flex items-center text-[#777] text-[13px] font-light">
                 <PlaceIcon
                   sx={{
                     fontSize: "12px",
@@ -87,7 +87,7 @@ export default function OfferCart(props) {
                 <div>{props.orgCity}</div>
               </div>
               {/* contract type and salary */}
-              <div className="flex text-[#777] text-[13px] font-thin">
+              <div className="flex text-[#777] text-[13px] font-light">
                 <img src={ContractIcon} className="ml-1" />
                 <div>{props.contractType}</div>
                 <span class="text-gray-500 ml-2">({props.salary})</span>

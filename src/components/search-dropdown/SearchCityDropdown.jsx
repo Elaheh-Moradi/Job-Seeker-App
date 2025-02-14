@@ -46,11 +46,13 @@ export default function SearchCityDropdown(props) {
   };
 
   const handleOptionClick = (option) => {
-    dispatch(cityActions.setCityOption(+option))
+    if (option !== null) {
+      dispatch(cityActions.setCityOption(+option));
+    }
     const filteredId = data.filter((item) => item.id === +option);
     setSelectedOption(filteredId[0].name);
-    dispatch(cityActions.setCityId(+option));
-    dispatch(cityActions.setCityName(filteredId[0].name))
+    // dispatch(cityActions.setCityId(+option));
+    dispatch(cityActions.setCityName(filteredId[0].name));
     setIsOpen(false);
   };
 

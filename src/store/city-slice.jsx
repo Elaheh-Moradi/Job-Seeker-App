@@ -1,25 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
-import useFetch from "../hooks/useFetch";
 
 const citySlice = createSlice({
   name: "city",
   initialState: {
     cities: [],
-    cityName:null,
-    cityID:null,
-    option:null
+    cityName: null,
+    cityID: [],
+    option: null,
+    changeCityDropDown: false,
   },
   reducers: {
-    setCityId:(state,action)=>{
-      state.cityID=action.payload
+    setCityId: (state, action) => {
+      if (action.payload != null && !state.cityID.includes(action.payload)) {
+        state.cityID.push(action.payload);
+      }
     },
-    setCityName:(state,action)=>{
-      state.cityName=action.payload
+    setCityName: (state, action) => {
+      state.cityName = action.payload;
     },
-    setCityOption:(state,action)=>{
-      state.option=action.payload
-    }
-    
+    setCityOption: (state, action) => {
+      state.option = action.payload;
+    },
+    setClearCityId: (state) => {
+      state.cityID = [];
+    },
+    setChangeDropDown: (state) => {
+      state.changeCityDropDown = !state.changeCityDropDown;
+    },
   },
 });
 

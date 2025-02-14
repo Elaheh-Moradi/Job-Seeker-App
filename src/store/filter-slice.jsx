@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const filterSlice = createSlice({
-  name: "job",
+  name: "filter",
   initialState: {
     filterItems:null,
     searchQuery:null,
-    changeQuery:false
+    changeQuery:false,
+    checkItems:null,
+    jobTiltleFilter:""
   },
   reducers: {
     setFilterItems:(state,action)=>{
@@ -16,6 +18,12 @@ const filterSlice = createSlice({
     },
     setChange:(state)=>{
         state.changeQuery=!state.changeQuery
+    },
+    setCheckItems:(state,action)=>{
+      state.checkItems=action.payload
+    },
+    setJobTitleFilter:(state,action)=>{
+      state.jobTiltleFilter=action.payload
     }
   },
 });

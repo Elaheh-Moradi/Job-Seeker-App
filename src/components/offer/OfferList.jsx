@@ -3,6 +3,8 @@ import useFetch from "../../hooks/useFetch.js";
 import Pagination from "../Pagination.jsx";
 import OfferCart from "./OfferCart.jsx";
 import { useEffect, useMemo, useState } from "react";
+// import Filter from "../Filter.jsx";
+import FilterOld from "../FilterOld.jsx";
 import Filter from "../Filter.jsx";
 
 export default function OfferList() {
@@ -59,7 +61,8 @@ export default function OfferList() {
                 {convertToPersianNumbers(jobs.length)} فرصت شغلی فعال یافت شد:{" "}
               </span>
             </div>
-            <Filter />
+            {/* <FilterOld /> */}
+            <Filter/>
           </div>
           <div>مرتب سازی</div>
         </div>

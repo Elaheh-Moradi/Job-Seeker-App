@@ -5,16 +5,19 @@ const jobSlice = createSlice({
   initialState: {
     jobs: [],
     className:null,
-    classId: null,
     filterItems:null,
-    typeOption:null
+    classId: [],
+    typeOption:null,
+    changeDropDown: false,
   },
   reducers: {
     setJobs: (state, action) => {
       state.jobs = action.payload;
     },
     setClassId: (state, action) => {
-      state.classId = action.payload;
+      if (action.payload != null && !state.classId.includes(action.payload)) {
+        state.classId.push(action.payload);
+      }
     },
     setClassName:(state, action)=>{
       state.className=action.payload;
@@ -24,7 +27,13 @@ const jobSlice = createSlice({
     },
     setTypeOption:(state,action)=>{
       state.typeOption=action.payload
-    }
+    },
+    setClearTypeId: (state) => {
+      state.classId = [];
+    },
+    setChangeDropDown: (state) => {
+      state.changeDropDown = !state.changeDropDown;
+    },
   },
 });
 
