@@ -24,6 +24,7 @@ const SearchBar = () => {
   const { data } = useFetch("http://localhost:3000/jobOffers");
   const cityId = useSelector((state) => state.city.cityID);
   const typeId = useSelector((state) => state.job.classId);
+  const contractId = useSelector((state) => state.job.contractId);
   const jobTitleFilter = useSelector((state) => state.filter.jobTiltleFilter);
   const cityOption = useSelector((state) => state.city.option);
   const typeOption = useSelector((state) => state.job.typeOption);
@@ -57,14 +58,17 @@ const SearchBar = () => {
       });
     }
     // return filteredResults;
-    if (cityId.length > 0) {
+    if (cityId.length > 0 && !cityId.includes(0)) {
       filteredResults= filteredResults.filter((item) => cityId.includes(item.stateId));
     } 
 
-    if (typeId.length > 0) {
+    if (typeId.length > 0 && !typeId.includes(0)) {
          filteredResults= filteredResults.filter((item) => typeId.includes(item.classId));
       }
-      
+
+    if (contractId.length > 0 && !contractId.includes(0)) {
+         filteredResults= filteredResults.filter((item) => contractId.includes(item.contractId));
+      }
    
     return filteredResults
   };
@@ -76,7 +80,7 @@ const SearchBar = () => {
 
   useEffect(() => {
     debouncedSearch(jobTitleFilter);
-  }, [jobTitleFilter, data, cityId,typeId]);
+  }, [jobTitleFilter, data, cityId,typeId,contractId]);
 
   const debouncedSearch = debounce(handleSearch, 300);
 
@@ -85,7 +89,9 @@ const SearchBar = () => {
     dispatch(jobActions.setChangeDropDown());
     dispatch(jobActions.setClearTypeId());
     dispatch(cityActions.setClearCityId());
+    dispatch(jobActions.setClearContractId());
     dispatch(cityActions.setCityId(cityOption));
+    dispatch(filterActions.setCityFlag(true))
     dispatch(jobActions.setClassId(typeOption));
 
     debouncedSearch(query);

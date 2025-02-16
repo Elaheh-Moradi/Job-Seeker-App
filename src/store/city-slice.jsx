@@ -27,6 +27,10 @@ const citySlice = createSlice({
     setChangeDropDown: (state) => {
       state.changeCityDropDown = !state.changeCityDropDown;
     },
+    setMinusCityId: (state, action) => {
+      state.cityID = state.cityID.filter((item) => item !== action.payload);
+      
+    },
   },
 });
 
