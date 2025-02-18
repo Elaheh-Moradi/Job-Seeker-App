@@ -4,7 +4,7 @@ const citySlice = createSlice({
   name: "city",
   initialState: {
     cities: [],
-    cityName: null,
+    cityName: [],
     cityID: [],
     option: null,
     changeCityDropDown: false,
@@ -16,7 +16,7 @@ const citySlice = createSlice({
       }
     },
     setCityName: (state, action) => {
-      state.cityName = action.payload;
+      state.cityName.push(action.payload) ;
     },
     setCityOption: (state, action) => {
       state.option = action.payload;

@@ -4,12 +4,13 @@ const jobSlice = createSlice({
   name: "job",
   initialState: {
     jobs: [],
-    className:null,
+    className:[],
     filterItems:null,
     classId: [],
     typeOption:null,
     changeDropDown: false,
-    contractId:[]
+    contractId:[],
+    
   },
   reducers: {
     setJobs: (state, action) => {
@@ -26,7 +27,7 @@ const jobSlice = createSlice({
       }
     },
     setClassName:(state, action)=>{
-      state.className=action.payload;
+      state.className.push(action.payload);
     },
     setFilterItems:(state,action)=>{
       state.filterItems=action.payload

@@ -61,10 +61,8 @@ export default function OfferList() {
                 {convertToPersianNumbers(jobs.length)} فرصت شغلی فعال یافت شد:{" "}
               </span>
             </div>
-            {/* <FilterOld /> */}
             <Filter/>
           </div>
-          <div>مرتب سازی</div>
         </div>
         {currentTableData.map((cart, index) => (
           <OfferCart
