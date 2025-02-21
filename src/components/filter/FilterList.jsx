@@ -22,17 +22,20 @@ const FilterList = () => {
   );
   return (
     <>
-      <FilterAcardion title={JOB_TYPE} content={typesList} Icon={MenuIcon} />
-      <FilterAcardion
-        title={JOB_CITY}
-        content={citiesList}
-        Icon={LocationOnIcon}
-      />
-      <FilterAcardion
-        title={JOB_CONTRACT}
-        content={contractsList}
-        Icon={() => <img src={ContractIcon} className="pl-2" />}
-      />
+      <div className="sm:h-full">
+        <FilterAcardion title={JOB_TYPE} content={typesList} Icon={MenuIcon} />
+        <FilterAcardion
+          title={JOB_CITY}
+          content={citiesList}
+          Icon={LocationOnIcon}
+        />
+        <FilterAcardion
+          title={JOB_CONTRACT}
+          content={contractsList}
+          Icon={() => <img src={ContractIcon} className="pl-2" />}
+        />
+
+      </div>
     </>
   );
 };

@@ -22,6 +22,9 @@ const Filter = () => {
   const [cityTag, setCityTag] = useState();
   const [typeTag, setTypeTag] = useState();
   const [contractTag, setContractTag] = useState();
+  const isClose = useSelector((state) => state.filter.isClose);
+  const showFilters = useSelector((state) => state.filter.showFilters);
+  const smallMode = useSelector((state) => state.filter.smallMode);
 
   const dispatch = useDispatch();
 
@@ -30,12 +33,15 @@ const Filter = () => {
   };
 
   const handleRemoveCityFilter = (id) => {
+    dispatch(filterActions.setShowFilters(true));
     dispatch(cityActions.setMinusCityId(id));
   };
   const handleRemoveTypeFilter = (id) => {
+    dispatch(filterActions.setShowFilters(true));
     dispatch(jobActions.setMinusTypeId(id));
   };
   const handleRemoveContractFilter = (id) => {
+    dispatch(filterActions.setShowFilters(true));
     dispatch(jobActions.setMinusContractId(id));
   };
 
@@ -100,26 +106,51 @@ const Filter = () => {
   }, [searchParams, dispatch]);
 
   useEffect(() => {
-    setCityTag(() => {
-      return cityOptions.filter((item) => cityId.includes(item.id));
-    });
-  }, [cityId]);
+    if (!smallMode) {
+      setCityTag(() => {
+        return cityOptions.filter((item) => cityId.includes(item.id));
+      });
+    }
+    if (showFilters) {
+      setCityTag(() => {
+        return cityOptions.filter((item) => cityId.includes(item.id));
+      });
+      dispatch(filterActions.setShowFilters(false));
+    }
+  }, [cityId, showFilters]);
 
   useEffect(() => {
-    setTypeTag(() => {
-      return typeOptions.filter((item) => typeId.includes(item.id));
-    });
-  }, [typeId]);
+    if (!smallMode) {
+      setTypeTag(() => {
+        return typeOptions.filter((item) => typeId.includes(item.id));
+      });
+    }
+
+    if (showFilters) {
+      setTypeTag(() => {
+        return typeOptions.filter((item) => typeId.includes(item.id));
+      });
+      dispatch(filterActions.setShowFilters(false));
+    }
+  }, [typeId, showFilters]);
 
   useEffect(() => {
-    setContractTag(() => {
-      return contractOptions.filter((item) => contractId.includes(item.id));
-    });
-  }, [contractId]);
+    if (!smallMode) {
+      setContractTag(() => {
+        return contractOptions.filter((item) => contractId.includes(item.id));
+      });
+    }
+    if (showFilters) {
+      setContractTag(() => {
+        return contractOptions.filter((item) => contractId.includes(item.id));
+      });
+      dispatch(filterActions.setShowFilters(false));
+    }
+  }, [contractId, showFilters]);
 
   return (
     <>
-      <div className="flex flex-row flex-wrap">
+      <div className="flex flex-row flex-wrap ">
         {jobTitleFilter && (
           <div
             className={`float-right w-fit py-[2px] px-3 mt-2 mb-1 mx-1 bg-[#3ab1e4]  text-[12px] text-[#fff]  rounded-sm`}

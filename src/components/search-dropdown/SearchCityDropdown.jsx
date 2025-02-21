@@ -4,6 +4,7 @@ import useFetch from "../../hooks/useFetch";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useDispatch } from "react-redux";
 import { cityActions } from "../../store/city-slice";
+import { filterActions } from "../../store/filter-slice";
 
 export default function SearchCityDropdown(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,10 +49,13 @@ export default function SearchCityDropdown(props) {
   const handleOptionClick = (option) => {
     if (option !== null) {
       dispatch(cityActions.setCityOption(+option));
+      //dispatch(filterActions.setShowFilters(true))
     }
     const filteredId = data.filter((item) => item.id === +option);
     setSelectedOption(filteredId[0].name);
-    // dispatch(cityActions.setCityId(+option));
+    
+    //  dispatch(cityActions.setCityId(+option));
+    
     dispatch(cityActions.setCityName(filteredId[0].name));
     setIsOpen(false);
   };
@@ -65,12 +69,12 @@ export default function SearchCityDropdown(props) {
 
   return (
     <>
-      <div className="relative w-80">
+      <div className="relative w-80 sm:w-full ">
         {/* Dropdown Trigger */}
         <div
           className={`relative w-full py-2 pr-10 pl-2 border border-gray-300 rounded-[3px] cursor-pointer bg-white 
         flex items-center justify-between bg-no-repeat bg-[right_0.7rem_center] bg-[length:1rem_1rem] h-[45px]
-        `}
+         `}
           onClick={toggleDropdown}
         >
           <LocationOnIcon

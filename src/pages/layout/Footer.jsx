@@ -1,13 +1,14 @@
 import TelegramIcon from "@mui/icons-material/Telegram";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MobileFooter from "./MobileFooter";
 
 export default function Footer() {
   return (
     <>
       <footer
         dir="rtl"
-        className="bg-[#444] text-white text-center py-4  bottom-0 w-full "
+        className="bg-[#444] text-white text-center py-4  bottom-0 w-full sm:hidden "
       >
         <div className="flex justify-center pr-28">
           {/* Section 1: Navigation Links */}
@@ -86,6 +87,7 @@ export default function Footer() {
           </p>
         </div>
       </footer>
+      <MobileFooter/>
     </>
   );
 }

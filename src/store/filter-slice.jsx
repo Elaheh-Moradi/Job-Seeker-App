@@ -9,6 +9,9 @@ const filterSlice = createSlice({
     checkItems: null,
     jobTiltleFilter: "",
     cityflag: null,
+    smallMode: false,
+    isClose: false,
+    showFilters:false
   },
   reducers: {
     setFilterItems: (state, action) => {
@@ -29,6 +32,15 @@ const filterSlice = createSlice({
     setCityFlag: (state, action) => {
       state.cityflag = action.payload;
     },
+    setSmallMode: (state, action) => {
+      state.smallMode = action.payload;
+    },
+    setIsClose: (state, action) => {
+      state.isClose = action.payload;
+    },
+    setShowFilters:(state,action)=>{
+      state.showFilters=action.payload
+    }
   },
 });
 

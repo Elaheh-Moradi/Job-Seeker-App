@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const FilterAcardion = ({ title, content, Icon }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const smallMode = useSelector((state) => state.filter.smallMode);
+
+  useEffect(() => {
+    setIsOpen(smallMode); // Update state if smallMode changes
+  }, [smallMode]);
 
   return (
     <div className="border-b">
@@ -24,10 +30,13 @@ const FilterAcardion = ({ title, content, Icon }) => {
         <span className="text-[#9d9d9d] text-[12px]">{isOpen ? "▲" : "▼"}</span>
       </button>
       <div
-        style={{ maxHeight: isOpen ? "200px" : "0px"}}
-        className="bg-white overflow-hidden border-t  transition-height duration-[100ms] ease-in-out"
+        className={`bg-white overflow-hidden border-t  transition-height duration-[100ms] ease-in-out ${
+          isOpen ? "max-h-[200px]" : "max-h-[0px]"
+        } `}
       >
-        <div className={`${isOpen ? "pt-4" : ""} ${isOpen?"pr-3":"pr-4"}`}>{content}</div>
+        <div className={`${isOpen ? "pt-4" : ""} ${isOpen ? "pr-3" : "pr-4"}`}>
+          {content}
+        </div>
       </div>
     </div>
   );

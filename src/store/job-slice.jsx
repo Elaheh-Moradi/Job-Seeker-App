@@ -10,7 +10,9 @@ const jobSlice = createSlice({
     typeOption:null,
     changeDropDown: false,
     contractId:[],
-    
+    tempJobs:[],
+    tempTypeId:[],
+    tempContractId:[]
   },
   reducers: {
     setJobs: (state, action) => {
@@ -50,6 +52,23 @@ const jobSlice = createSlice({
     setMinusContractId: (state, action) => {
       state.contractId = state.contractId.filter((item) => item !== action.payload);      
     },
+    setTempJobs:(state,action)=>{
+      state.tempJobs=action.payload
+    },
+    setTempType:(state,action)=>{
+      // if (action.payload != null && !state.tempTypeId.includes(action.payload)) {
+      //   state.tempTypeId.push(action.payload);
+      // }
+      state.tempTypeId=action.payload
+    },
+    setTempContract:(state,action)=>{
+      // state.tempContractId=action.payload
+      state.tempTypeId.forEach((item) => {
+        if (!action.payload.includes(item)) {
+          state.tempTypeId.push(item);
+        }
+      });
+    }
   },
 });
 

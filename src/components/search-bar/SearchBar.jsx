@@ -21,6 +21,7 @@ function debounce(func, delay) {
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
+  const [isOpen,setIsOpen]=useState(false)
   const { data } = useFetch("http://localhost:3000/jobOffers");
   const cityId = useSelector((state) => state.city.cityID);
   const typeId = useSelector((state) => state.job.classId);
@@ -28,6 +29,9 @@ const SearchBar = () => {
   const jobTitleFilter = useSelector((state) => state.filter.jobTiltleFilter);
   const cityOption = useSelector((state) => state.city.option);
   const typeOption = useSelector((state) => state.job.typeOption);
+  const smallMode = useSelector((state) => state.filter.smallMode);
+  const showFilters = useSelector((state) => state.filter.showFilters);
+  const isClose = useSelector((state) => state.filter.isClose);
 
   const dispatch = useDispatch();
 
@@ -75,7 +79,11 @@ const SearchBar = () => {
 
   const handleSearch = (searchQuery) => {
     const finalFilterResult = handleFilterAllFilds(searchQuery);
-    dispatch(jobActions.setJobs(finalFilterResult));
+    if (smallMode) {
+      dispatch(jobActions.setTempJobs(finalFilterResult))
+    }else{
+      dispatch(jobActions.setJobs(finalFilterResult));
+    }
   };
 
   useEffect(() => {
@@ -85,6 +93,7 @@ const SearchBar = () => {
   const debouncedSearch = debounce(handleSearch, 300);
 
   const handleButtonClick = () => {
+    
     dispatch(cityActions.setChangeDropDown());
     dispatch(jobActions.setChangeDropDown());
     dispatch(jobActions.setClearTypeId());
@@ -93,7 +102,8 @@ const SearchBar = () => {
     dispatch(cityActions.setCityId(cityOption));
     dispatch(filterActions.setCityFlag(true))
     dispatch(jobActions.setClassId(typeOption));
-
+    // dispatch(filterActions.setShowFilters(true))
+    
     debouncedSearch(query);
     dispatch(filterActions.setJobTitleFilter(query));
   };
@@ -106,15 +116,16 @@ const SearchBar = () => {
           style={{
             backgroundImage: `url(${GradientImage})`,
           }}
-          className={`flex space-x-2 space-x-reverse rounded-sm mt-[3vh] mx-auto px-5 py-6 bg-repeat-y w-[81%] h-[95px] `}
+          className={`flex space-x-2 space-x-reverse rounded-sm mt-[3vh] mx-auto px-5 py-6 bg-repeat-y w-[81%] h-[95px] sm:w-full sm:flex-col sm:justify-center sm:items-center sm:h-full sm:space-y-3 sm:mt-0 `}
         >
           {/* job title search */}
-          <div className="flex justify-center relative">
+          <div className="flex justify-center relative sm:w-full sm:justify-between sm:mr-2 ">
             <Input
               placeholder="عنوان شغلی، مهارت یا ..."
-              className="w-80 h-[45px] py-2 pr-10 text-[#9d9d9d] rounded-[3px] border-[1px] border-[#e5e5e5] focus:text-[#9d9d9d] focus:outline-none focus:shadow-[inset_0_-1px_0_1px_#d0d0d0]"
+              className="w-80 sm:w-full h-[45px] py-2 pr-10 text-[#9d9d9d] rounded-[3px] border-[1px] border-[#e5e5e5] focus:text-[#9d9d9d] focus:outline-none focus:shadow-[inset_0_-1px_0_1px_#d0d0d0]"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              onFocus={()=>setIsOpen(true)}
             />
             <SearchRoundedIcon
               style={{
@@ -127,16 +138,16 @@ const SearchBar = () => {
             />
           </div>
           {/* job city search */}
-          <div className="flex justify-center relative">
+          <div className={`flex justify-center relative sm:w-full ${isOpen?"sm:flex":"sm:hidden"}`}>
             <SearchCityDropdown />
           </div>
           {/* job class search */}
-          <div className="flex justify-center relative">
+          <div className={`flex justify-center relative sm:w-full ${isOpen?"sm:flex":"sm:hidden"}`}>
             <SearchClassDropdown />
           </div>
           <Button
             onClick={handleButtonClick}
-            className="bg-[#ffcd70] text-black text-opacity-95 shadow-[inset_0_-3px_0_0_#ffb833] px-14 text-[18px] rounded-sm"
+            className="bg-[#ffcd70] text-black text-opacity-95 shadow-[inset_0_-3px_0_0_#ffb833] px-14 text-[18px] rounded-sm sm:h-[60px] sm:w-full "
             title="جستجو کن"
           />
         </div>

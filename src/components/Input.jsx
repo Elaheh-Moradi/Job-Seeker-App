@@ -11,6 +11,7 @@ export default function Input(props) {
         id={props.id}
         onChange={props.onChange}
         value={props.value}
+        onFocus={props.onFocus}
       />
     </>
   );

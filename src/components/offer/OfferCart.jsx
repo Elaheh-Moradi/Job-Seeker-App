@@ -25,28 +25,28 @@ export default function OfferCart(props) {
         )}
         {/* each item of list */}
         <div
-          className={` flex justify-start py-6 border-[1px] border-t-0 border-[#e7e7e7] border-r-4 ${
+          className={`sm:flex-col flex justify-start py-6 border-[1px] border-t-0 border-[#e7e7e7] border-r-4 ${
             props.emergency ? "border-r-red-600" : "border-r-[#e7e7e7]"
           }
           ${props.index !== props.length - 1 && "pb-5 mb-0"}
           `}
         >
           {/* job icon */}
-          <div className="flex justify-center" style={{ width: "15%" }}>
+          <div className="flex justify-center w-[15%] sm:w-auto ">
             {props.imageSrc ? (
               <img
                 src={props.imageSrc}
-                className="h-[64px] w-[64px] bg-[#f5f5f5] border-[1px] border-gray-100"
+                className="h-[64px] w-[64px] bg-[#f5f5f5] border-[1px] border-gray-100 sm:mb-[2%]"
               />
             ) : (
               <img
                 src={DefaulImage}
-                className="h-[64px] w-[64px] bg-[#f5f5f5] border-[1px] border-gray-100"
+                className="h-[64px] w-[64px] bg-[#f5f5f5] border-[1px] border-gray-100 sm:mb-[2%]"
               />
             )}
           </div>
           {/* the midle part in offer cart */}
-          <div dir="rtl" className="w-3/5 flex flex-col">
+          <div dir="rtl" className="w-3/5 flex flex-col sm:mx-[4%] sm:w-[80%]">
             {/* job title */}
             <div
               className={`font-medium text-[18px]  ${
@@ -55,7 +55,7 @@ export default function OfferCart(props) {
             >
               {props.jobTitle}{" "}
               {props.emergency ? (
-                <span class="inline-block px-1 py-0 bg-[#c93d31] text-[11px] text-[#fff] text-sm font-normal rounded-[3px]">
+                <span class="inline-block px-1 py-0 bg-[#c93d31] text-[11px] text-[#fff] text-sm font-normal rounded-[3px] ">
                   استخدام فوری
                 </span>
               ) : (
@@ -63,18 +63,18 @@ export default function OfferCart(props) {
               )}
             </div>
             {/* organizatio title in farsi and english */}
-            <div className="flex flex-col leading-7">
-              <div className="flex text-[#777] text-[13px] font-light ">
+            <div className="flex flex-col leading-7 sm:leading-5">
+              <div className="flex text-[#777] sm:text-[#333333] text-[13px] font-light sm:flex-wrap">
                 <div className="flex items-center">
                   {/* building Icon */}
                   <img src={BuildingIcon} className="ml-1" />
                   {props.organizationTitleFa}
                 </div>
-                <span class="text-gray-500 mx-2">|</span>
+                <span class="sm:text-[#333333] text-gray-500 mx-2">|</span>
                 <div>{props.organizationTitleEn}</div>
               </div>
               {/* location of organization */}
-              <div className="flex items-center text-[#777] text-[13px] font-light">
+              <div className="flex items-center text-[#777] text-[13px] font-light sm:text-[#333333] sm:flex-wrap">
                 <PlaceIcon
                   sx={{
                     fontSize: "12px",
@@ -83,21 +83,21 @@ export default function OfferCart(props) {
                   }}
                 />
                 <div>{props.orgState}</div>
-                <span class="text-gray-500 ml-2">،</span>
+                <span class="text-gray-500 sm:text-[#333333] ml-2">،</span>
                 <div>{props.orgCity}</div>
               </div>
               {/* contract type and salary */}
-              <div className="flex text-[#777] text-[13px] font-light">
+              <div className="flex text-[#777] text-[13px] font-light sm:text-[#333333] sm:flex-wrap">
                 <img src={ContractIcon} className="ml-1" />
                 <div>{props.contractType}</div>
-                <span class="text-gray-500 ml-2">({props.salary})</span>
+                <span class="text-gray-500 sm:text-[#333333] ml-2">({props.salary})</span>
               </div>
             </div>
           </div>
           {/* Buttons */}
-          <div className="w-1/5 flex flex-col justify-center items-center">
+          <div className="w-1/5 flex flex-col justify-center items-center sm:w-full ">
             <Button
-              className="mb-[10px] bg-[#1abc9c] text-[#fff] hover:bg-[#1dd3af] h-[50px] w-[120px] flex justify-center items-center text-[16px] font-bold border-none rounded-[4px]"
+              className="sm:w-[95%] sm:mt-[2%] mb-[10px] bg-[#1abc9c] text-[#fff] hover:bg-[#1dd3af] h-[50px] w-[120px] flex justify-center items-center text-[16px] font-bold border-none rounded-[4px]"
               title="ارسال رزومه"
             />
             <button
@@ -106,7 +106,7 @@ export default function OfferCart(props) {
               onClick={() => handleToggleFavorite(props.id)}
               className={`flex items-center justify-center w-[120px] bg-white border  ${
                 isStarred[props.id] ? "border-[#b87700]" : "border-[#e5e7eb]"
-              } rounded text-[14px] leading-[28px]  text-[rgba(135,135,135,0.95)] font-normal transition`}
+              } rounded text-[14px] leading-[28px]  text-[rgba(135,135,135,0.95)] font-normal transition sm:w-[95%]`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

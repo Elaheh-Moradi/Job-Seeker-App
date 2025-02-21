@@ -12,12 +12,12 @@ export default function SearchJobPage() {
       <SearchBar/>
       {/* <SearchBarOld/> */}
       <div className="flex justify-center space-x-5 mb-[5vh]">
-        <div dir="rtl" className="rounded-sm w-3/5 h-full ">
+        <div dir="rtl" className="rounded-sm w-3/5 h-full sm:w-[90%]">
           <OfferList />
         </div>
         <div
           dir="rtl"
-          className="mt-5 border-[1px] w-1/5 rounded-sm border-[#e7e7e7]"
+          className="mt-5 border-[1px] w-1/5 rounded-sm border-[#e7e7e7] sm:hidden"
         >
           <FilterList/>
         </div>

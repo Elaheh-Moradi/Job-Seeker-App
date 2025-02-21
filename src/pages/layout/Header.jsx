@@ -45,7 +45,7 @@ export default function Header() {
     <>
       <div
         dir="rtl"
-        className="flex justify-between  items-center top-0 bg-[#444] h-[10.5vh] fixed w-full z-50 md:hidden "
+        className="flex justify-between  items-center top-0 bg-[#444] h-[10.5vh] fixed w-full z-50 sm:hidden "
       >
         {/* The menu on right side of header */}
         <ul

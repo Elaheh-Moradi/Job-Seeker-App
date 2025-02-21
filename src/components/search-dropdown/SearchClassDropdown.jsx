@@ -4,6 +4,7 @@ import useFetch from "../../hooks/useFetch";
 import MenuIcon from "@mui/icons-material/Menu";
 import { jobActions } from "../../store/job-slice";
 import { useDispatch } from "react-redux";
+import { filterActions } from "../../store/filter-slice";
 
 export default function SearchClassDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,10 +49,13 @@ export default function SearchClassDropdown() {
   const handleOptionClick = (option) => {
     if (option !== null) {
       dispatch(jobActions.setTypeOption(+option));
+      //dispatch(filterActions.setShowFilters(true))
     }
     const filteredId = data.filter((item) => item.id === +option);
     setSelectedOption(filteredId[0].title);
-    // dispatch(jobActions.setClassId(+option));
+    
+     //dispatch(jobActions.setClassId(+option));
+    
     dispatch(jobActions.setClassName(filteredId[0].title));
     setIsOpen(false);
   };
@@ -65,12 +69,11 @@ export default function SearchClassDropdown() {
 
   return (
     <>
-      <div className="relative w-80">
+      <div className="relative w-80 sm:w-full">
         {/* Dropdown Trigger */}
         <div
           className={`relative w-full py-2 pr-10 pl-2 border border-gray-300 rounded-[3px] cursor-pointer bg-white 
-        flex items-center justify-between bg-no-repeat bg-[right_0.7rem_center] bg-[length:1rem_1rem] h-[45px]
-        `}
+        flex items-center justify-between bg-no-repeat bg-[right_0.7rem_center] bg-[length:1rem_1rem] h-[45px] `}
           onClick={toggleDropdown}
         >
           <MenuIcon
