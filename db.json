@@ -47,7 +47,11 @@
       "salary": "حقوق توافقی",
       "duration": "۲۴ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/TGJU.webp"
+      "image-src": "./src/assets/images/organization-icon/TGJU.webp",
+      "popularity":9,
+      "diversity":8,
+      "check-resume":6,
+      "company-image":"./src/assets/images/company-image/1.jpg"
     },
     {
       "id": 2,
@@ -63,7 +67,11 @@
       "salary": "حقوق از ۲۴,۰۰۰,۰۰۰ تومان",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Irsa-Rayanet.webp"
+      "image-src": "./src/assets/images/organization-icon/Irsa-Rayanet.webp",
+      "popularity":10,
+      "diversity":4,
+      "check-resume":8,
+      "company-image":"./src/assets/images/company-image/2.jpg"
     },
     {
       "id": 3,
@@ -79,7 +87,11 @@
       "salary": "حقوق از ۳۵,۰۰۰,۰۰۰ تومان",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Abarsam-Dade-Gostar-Shoma.webp"
+      "image-src": "./src/assets/images/organization-icon/Abarsam-Dade-Gostar-Shoma.webp",
+      "popularity":5,
+      "diversity":8,
+      "check-resume":7,
+      "company-image":"./src/assets/images/company-image/3.jpg"
     },
     {
       "id": 4,
@@ -95,7 +107,11 @@
       "salary": "حقوق توافقی",
       "duration": "۳۲ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/GMTII.webp"
+      "image-src": "./src/assets/images/organization-icon/GMTII.webp",
+      "popularity":4,
+      "diversity":3,
+      "check-resume":5,
+      "company-image":"./src/assets/images/company-image/4.jpg"
     },
     {
       "id": 5,
@@ -111,7 +127,11 @@
       "salary": "حقوق توافقی",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Arpa.webp"
+      "image-src": "./src/assets/images/organization-icon/Arpa.webp",
+      "popularity":6,
+      "diversity":7,
+      "check-resume":5,
+      "company-image":"./src/assets/images/company-image/5.jpg"
     },
     {
       "id": 6,
@@ -127,7 +147,11 @@
       "salary": "حقوق توافقی",
       "duration": "۵ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/Arpa.webp"
+      "image-src": "./src/assets/images/organization-icon/Arpa.webp",
+      "popularity":9,
+      "diversity":8,
+      "check-resume":6,
+      "company-image":"./src/assets/images/company-image/6.jpg"
     },
     {
       "id": 7,
@@ -143,7 +167,11 @@
       "salary": "حقوق توافقی",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Red-Limoo.webp"
+      "image-src": "./src/assets/images/organization-icon/Red-Limoo.webp",
+      "popularity":8,
+      "diversity":9,
+      "check-resume":6,
+      "company-image":"./src/assets/images/company-image/7.jpg"
     },
     {
       "id": 8,
@@ -159,7 +187,11 @@
       "salary": "حقوق توافقی",
       "duration": "۱۰ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/Zeevash.webp"
+      "image-src": "./src/assets/images/organization-icon/Zeevash.webp",
+      "popularity":2,
+      "diversity":4,
+      "check-resume":3,
+      "company-image":"./src/assets/images/company-image/8.jpg"
     },
     {
       "id": 9,
@@ -175,7 +207,11 @@
       "salary": "حقوق از ۲۰,۰۰۰,۰۰۰ تومان",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Algoritm-Sazan-ARN.webp"
+      "image-src": "./src/assets/images/organization-icon/Algoritm-Sazan-ARN.webp",
+      "popularity":10,
+      "diversity":7,
+      "check-resume":8,
+      "company-image":"./src/assets/images/company-image/9.jpg"
     },
     {
       "id": 10,
@@ -191,7 +227,11 @@
       "salary": "حقوق توافقی",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Graph.webp"
+      "image-src": "./src/assets/images/organization-icon/Graph.webp",
+      "popularity":4,
+      "diversity":5,
+      "check-resume":2,
+      "company-image":"./src/assets/images/company-image/10.jpg"
     },
     {
       "id": 11,
@@ -207,7 +247,11 @@
       "salary": "حقوق توافقی",
       "duration": "۲۴ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/PRDCo.webp"
+      "image-src": "./src/assets/images/organization-icon/PRDCo.webp",
+      "popularity":8,
+      "diversity":8,
+      "check-resume":6,
+      "company-image":"./src/assets/images/company-image/11.jpg"
     },
     {
       "id": 12,
@@ -223,7 +267,11 @@
       "salary": "حقوق از ۳۰,۰۰۰,۰۰۰ تومان",
       "duration": "امروز",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/Addlaw.webp"
+      "image-src": "./src/assets/images/organization-icon/Addlaw.webp",
+      "popularity":7,
+      "diversity":8,
+      "check-resume":7,
+      "company-image":"./src/assets/images/company-image/12.jpg"
     },
     {
       "id": 13,
@@ -239,7 +287,11 @@
       "salary": "حقوق از ۲۰,۰۰۰,۰۰۰ تومان",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Peykan.webp"
+      "image-src": "./src/assets/images/organization-icon/Peykan.webp",
+      "popularity":5,
+      "diversity":7,
+      "check-resume":4,
+      "company-image":null
     },
     {
       "id": 14,
@@ -255,7 +307,11 @@
       "salary": "حقوق توافقی",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Yara-Narm-Afzar-Amlak.webp"
+      "image-src": "./src/assets/images/organization-icon/Yara-Narm-Afzar-Amlak.webp",
+      "popularity":9,
+      "diversity":6,
+      "check-resume":6,
+      "company-image":null
     },
     {
       "id": 15,
@@ -271,7 +327,11 @@
       "salary": "حقوق توافقی",
       "duration": "امروز",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/Tojet.webp"
+      "image-src": "./src/assets/images/organization-icon/Tojet.webp",
+      "popularity":9,
+      "diversity":10,
+      "check-resume":8,
+      "company-image":null
     },
     {
       "id": 16,
@@ -287,7 +347,11 @@
       "salary": "حقوق توافقی",
       "duration": "امروز",
       "emergency": true,
-      "image-src": null
+      "image-src": null,
+      "popularity":9,
+      "diversity":8,
+      "check-resume":6,
+      "company-image":null
     },
 
     {
@@ -304,7 +368,11 @@
       "salary": "حقوق توافقی",
       "duration": "۲۴ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/TGJU.webp"
+      "image-src": "./src/assets/images/organization-icon/TGJU.webp",
+      "popularity":9,
+      "diversity":8,
+      "check-resume":6,
+      "company-image":null
     },
     {
       "id": 18,
@@ -320,7 +388,11 @@
       "salary": "حقوق از ۲۴,۰۰۰,۰۰۰ تومان",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Irsa-Rayanet.webp"
+      "image-src": "./src/assets/images/organization-icon/Irsa-Rayanet.webp",
+      "popularity":10,
+      "diversity":4,
+      "check-resume":8,
+      "company-image":null
     },
     {
       "id": 19,
@@ -336,7 +408,11 @@
       "salary": "حقوق از ۳۵,۰۰۰,۰۰۰ تومان",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Abarsam-Dade-Gostar-Shoma.webp"
+      "image-src": "./src/assets/images/organization-icon/Abarsam-Dade-Gostar-Shoma.webp",
+      "popularity":5,
+      "diversity":8,
+      "check-resume":7,
+      "company-image":null
     },
     {
       "id": 20,
@@ -352,7 +428,11 @@
       "salary": "حقوق توافقی",
       "duration": "۳۲ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/GMTII.webp"
+      "image-src": "./src/assets/images/organization-icon/GMTII.webp",
+      "popularity":4,
+      "diversity":3,
+      "check-resume":5,
+      "company-image":null
     },
     {
       "id": 21,
@@ -368,7 +448,11 @@
       "salary": "حقوق توافقی",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Arpa.webp"
+      "image-src": "./src/assets/images/organization-icon/Arpa.webp",
+      "popularity":6,
+      "diversity":7,
+      "check-resume":5,
+      "company-image":null
     },
     {
       "id": 22,
@@ -384,7 +468,11 @@
       "salary": "حقوق توافقی",
       "duration": "۵ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/Arpa.webp"
+      "image-src": "./src/assets/images/organization-icon/Arpa.webp",
+      "popularity":9,
+      "diversity":8,
+      "check-resume":6,
+      "company-image":null
     },
     {
       "id": 23,
@@ -400,7 +488,11 @@
       "salary": "حقوق توافقی",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Red-Limoo.webp"
+      "image-src": "./src/assets/images/organization-icon/Red-Limoo.webp",
+      "popularity":8,
+      "diversity":9,
+      "check-resume":6,
+      "company-image":null
     },
     {
       "id": 24,
@@ -416,7 +508,11 @@
       "salary": "حقوق توافقی",
       "duration": "۱۰ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/Zeevash.webp"
+      "image-src": "./src/assets/images/organization-icon/Zeevash.webp",
+      "popularity":2,
+      "diversity":4,
+      "check-resume":3,
+      "company-image":null
     },
     {
       "id": 25,
@@ -432,7 +528,11 @@
       "salary": "حقوق از ۲۰,۰۰۰,۰۰۰ تومان",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Algoritm-Sazan-ARN.webp"
+      "image-src": "./src/assets/images/organization-icon/Algoritm-Sazan-ARN.webp",
+      "popularity":10,
+      "diversity":7,
+      "check-resume":8,
+      "company-image":null
     },
     {
       "id": 26,
@@ -448,7 +548,11 @@
       "salary": "حقوق توافقی",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Graph.webp"
+      "image-src": "./src/assets/images/organization-icon/Graph.webp",
+      "popularity":4,
+      "diversity":5,
+      "check-resume":2,
+      "company-image":null
     },
     {
       "id": 27,
@@ -464,7 +568,11 @@
       "salary": "حقوق توافقی",
       "duration": "۲۴ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/PRDCo.webp"
+      "image-src": "./src/assets/images/organization-icon/PRDCo.webp",
+      "popularity":8,
+      "diversity":8,
+      "check-resume":6,
+      "company-image":null
     },
     {
       "id": 28,
@@ -480,7 +588,11 @@
       "salary": "حقوق از ۳۰,۰۰۰,۰۰۰ تومان",
       "duration": "امروز",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/Addlaw.webp"
+      "image-src": "./src/assets/images/organization-icon/Addlaw.webp",
+      "popularity":7,
+      "diversity":8,
+      "check-resume":7,
+      "company-image":null
     },
     {
       "id": 29,
@@ -496,7 +608,11 @@
       "salary": "حقوق از ۲۰,۰۰۰,۰۰۰ تومان",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Peykan.webp"
+      "image-src": "./src/assets/images/organization-icon/Peykan.webp",
+      "popularity":5,
+      "diversity":7,
+      "check-resume":4,
+      "company-image":null
     },
     {
       "id": 30,
@@ -512,7 +628,11 @@
       "salary": "حقوق توافقی",
       "duration": "",
       "emergency": true,
-      "image-src": "./src/assets/images/organization-icon/Yara-Narm-Afzar-Amlak.webp"
+      "image-src": "./src/assets/images/organization-icon/Yara-Narm-Afzar-Amlak.webp",
+      "popularity":9,
+      "diversity":6,
+      "check-resume":6,
+      "company-image":null
     },
     {
       "id": 31,
@@ -528,7 +648,11 @@
       "salary": "حقوق توافقی",
       "duration": "امروز",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/Tojet.webp"
+      "image-src": "./src/assets/images/organization-icon/Tojet.webp",
+      "popularity":9,
+      "diversity":10,
+      "check-resume":8,
+      "company-image":null
     },
     {
       "id": 32,
@@ -544,7 +668,12 @@
       "salary": "حقوق توافقی",
       "duration": "امروز",
       "emergency": true,
-      "image-src": null
+      "image-src": null,
+      "popularity":9,
+      "diversity":8,
+      "check-resume":6,
+      "company-image":null
     }
+
   ]
 }

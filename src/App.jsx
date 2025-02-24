@@ -7,6 +7,8 @@ import SearchJobPage from "./pages/menu/SearchJobPage.jsx";
 import HomePage from "./pages/menu/HomePage.jsx";
 import Test from "./Test.jsx";
 
+
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem("authToken"));
   const [isInit, setIsInit] = useState(false);
