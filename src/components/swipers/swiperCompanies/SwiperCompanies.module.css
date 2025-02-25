@@ -1,0 +1,29 @@
+@import "swiper/css";
+@import "swiper/css/pagination";
+
+.my-custom-swiper :global(.swiper-pagination) {
+  position: relative !important;
+  margin-top: 5% !important;
+  text-align: center !important;
+  justify-content: center !;
+}
+
+.my-custom-swiper :global(.swiper-pagination-bullet) {
+  background-color: #222e3a !important;
+  transition: opacity 0.3s !important;
+  margin: 10px 10px !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.my-custom-swiper :global(.swiper-pagination-bullet-active) {
+  background-color: #1abc9c !important;
+  opacity: 1;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 8px 10px !important;
+}
+
+.my-custom-swiper :global(.swiper-slide) {
+  height: auto !important;
+}

@@ -3,25 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import DefaultImage from "../../../assets/images/organization-icon/Default.webp";
 import styles from "./SwiperTopHomePage.module.css";
-import useFetch from "../../../hooks/useFetch";
+// import useFetch from "../../../hooks/useFetch";
 
-const SwiperTopHomePage = () => {
-  const { data } = useFetch("http://localhost:3000/jobOffers");
+const SwiperTopHomePage = ({data}) => {
+  // const { data } = useFetch("http://localhost:3000/jobOffers");
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef(null);
 
-// useEffect(() => {
-//     const interval = setTimeout(() => {
-//       if (swiperRef.current && prevRef.current && nextRef.current) {
-//         swiperRef.current.params.navigation.prevEl = prevRef.current;
-//         swiperRef.current.params.navigation.nextEl = nextRef.current;
-//         swiperRef.current.navigation.init();
-//         swiperRef.current.navigation.update();
-//       }
-//     }, 1000); // Small delay ensures refs are ready
-//     return () => clearTimeout(interval);
-//   }, [data]); 
 
 useEffect(() => {
   if (swiperRef.current && prevRef.current && nextRef.current) {
@@ -67,7 +56,7 @@ useEffect(() => {
                   className="h-[80%] w-[80%] rounded-md mb-[20%]"
                 />
               )}
-              <div className="text-center">{item["organizationTitle-fa"]}</div>
+              <span className="text-center whitespace-nowrap">{item["organizationTitle-fa"]}</span>
             </div>
           </SwiperSlide>
         ))}

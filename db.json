@@ -51,7 +51,8 @@
       "popularity":9,
       "diversity":8,
       "check-resume":6,
-      "company-image":"./src/assets/images/company-image/1.jpg"
+      "company-image":"./src/assets/images/company-image/1.jpg",
+      "brief-info":"شرکت شبکه اطلاع‌رسانی طلا، سکه و ارز مرجعی معتبر برای ارائه نرخ لحظه‌ای طلا، ارز و سکه، تحلیل بازارهای مالی و اخبار اقتصادی با هدف اطلاع‌رسانی دقیق و شفاف است."
     },
     {
       "id": 2,
@@ -71,7 +72,8 @@
       "popularity":10,
       "diversity":4,
       "check-resume":8,
-      "company-image":"./src/assets/images/company-image/2.jpg"
+      "company-image":"./src/assets/images/company-image/2.jpg",
+      "brief-info":"با تکیه بر نوآوری، تخصص و تعهد، مسیر تحول دیجیتال را هموار می‌سازیم. با خلق راهکارهای هوشمند، مرزهای موفقیت را جابه‌جا می‌کنیم و آینده‌ای روشن‌تر می‌سازیم."
     },
     {
       "id": 3,
@@ -91,7 +93,8 @@
       "popularity":5,
       "diversity":8,
       "check-resume":7,
-      "company-image":"./src/assets/images/company-image/3.jpg"
+      "company-image":"./src/assets/images/company-image/3.jpg",
+      "brief-info":"با قدرت خلاقیت، دانش فنی و تعهد، مسیر موفقیت هموار می‌شود. هر پروژه فرصتی برای نوآوری است و هر چالش، گامی به سوی پیشرفت و تحقق رویاهای بزرگ‌تر."
     },
     {
       "id": 4,
@@ -99,7 +102,7 @@
       "classId": 1,
       "contractId":1,
       "jobTitle": "برنامه‌نویس فرانت اند (Front-End-Mid Level)",
-      "organizationTitle-fa": "موسسه خدمات مدیریت و فناوری رشد قلم‌چی",
+      "organizationTitle-fa": "موسسه خدمات فناوری قلم‌چی",
       "organizationTitle-en": "GMTII",
       "orgState": "تهران",
       "orgCity": "تهران",
@@ -111,7 +114,8 @@
       "popularity":4,
       "diversity":3,
       "check-resume":5,
-      "company-image":"./src/assets/images/company-image/4.jpg"
+      "company-image":"./src/assets/images/company-image/4.jpg",
+      "brief-info":" با تلاش مستمر و هدف‌گذاری دقیق، هر چالشی فرصتی برای رشد است و آینده‌ای روشن در انتظار پیشگامان است."
     },
     {
       "id": 5,
@@ -131,7 +135,8 @@
       "popularity":6,
       "diversity":7,
       "check-resume":5,
-      "company-image":"./src/assets/images/company-image/5.jpg"
+      "company-image":"./src/assets/images/company-image/5.jpg",
+      "brief-info":" از قافله عقب افتادن مشکلی است که گریبان بسیار از فناوری‌ها را در داخل کشور گرفته است."
     },
     {
       "id": 6,
@@ -139,19 +144,20 @@
       "classId": 2,
       "contractId":1,
       "jobTitle": "برنامه‌نویس دات نت(ASP.NET)",
-      "organizationTitle-fa": "وب 24",
-      "organizationTitle-en": "Web24",
+      "organizationTitle-fa": "آراد",
+      "organizationTitle-en": "Arad",
       "orgState": "تهران",
       "orgCity": "تهران",
       "contractType": "قرارداد تمام‌وقت",
       "salary": "حقوق توافقی",
       "duration": "۵ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/Arpa.webp",
+      "image-src": "./src/assets/images/organization-icon/Arad.webp",
       "popularity":9,
       "diversity":8,
       "check-resume":6,
-      "company-image":"./src/assets/images/company-image/6.jpg"
+      "company-image":"./src/assets/images/company-image/6.jpg",
+      "brief-info":"رؤیاها زمانی به واقعیت تبدیل می‌شوند که جسارت آغاز کردن را داشته باشید. هر قدم، پلی به سوی دستاوردهای بزرگ‌تر است؛ کافی‌ست باور کنید که هیچ محدودیتی جز ذهن خودتان وجود ندارد."
     },
     {
       "id": 7,
@@ -171,7 +177,8 @@
       "popularity":8,
       "diversity":9,
       "check-resume":6,
-      "company-image":"./src/assets/images/company-image/7.jpg"
+      "company-image":"./src/assets/images/company-image/7.jpg",
+      "brief-info":"شرکت رد لیمو با تکیه بر نوآوری و تخصص، خدمات طراحی وب، اپلیکیشن و هوشمندسازی را ارائه می‌دهد و با استفاده از فناوری‌های روز، کسب‌وکارها را به سوی تحول دیجیتال هدایت می‌کند."
     },
     {
       "id": 8,
@@ -191,7 +198,8 @@
       "popularity":2,
       "diversity":4,
       "check-resume":3,
-      "company-image":"./src/assets/images/company-image/8.jpg"
+      "company-image":"./src/assets/images/company-image/8.jpg",
+      "brief-info":"شرکت زیوش یک داروخانه آنلاین مدرن است که با مجوز رسمی از وزارت بهداشت، محصولات آرایشی، بهداشتی، درمانی و مکمل‌های متنوع را با مشاوره تخصصی و پشتیبانی ۲۴ ساعته ارائه می‌دهد."
     },
     {
       "id": 9,
@@ -211,7 +219,8 @@
       "popularity":10,
       "diversity":7,
       "check-resume":8,
-      "company-image":"./src/assets/images/company-image/9.jpg"
+      "company-image":"./src/assets/images/company-image/9.jpg",
+      "brief-info":"شرکت الگوریتم سازان آرن در گرگان، به‌عنوان بخشی از شرکت بین‌المللی Arn Fintech با دفتر مرکزی در استانبول، در حوزه ارائه راه‌حل‌های نوآورانه فناوری مالی فعالیت می‌کند."
     },
     {
       "id": 10,
@@ -231,7 +240,8 @@
       "popularity":4,
       "diversity":5,
       "check-resume":2,
-      "company-image":"./src/assets/images/company-image/10.jpg"
+      "company-image":"./src/assets/images/company-image/10.jpg",
+      "brief-info":"این شرکت با تمرکز بر امنیت سایبری، شناسایی تهدیدات پیشرفته و ارائه راهکارهای نوآورانه، از اطلاعات سازمان‌ها محافظت کرده و بستر دیجیتالی امن و مطمئنی برای کسب‌وکارها فراهم می‌سازد."
     },
     {
       "id": 11,
@@ -251,7 +261,8 @@
       "popularity":8,
       "diversity":8,
       "check-resume":6,
-      "company-image":"./src/assets/images/company-image/11.jpg"
+      "company-image":"./src/assets/images/company-image/11.jpg",
+      "brief-info":"این شرکت با ایمان به قدرت نوآوری و تعهد به پیشرفت، هر چالش را فرصتی برای رشد می‌داند. با تلاش مستمر و خلاقیت، مسیر موفقیت را به آینده‌ای روشن‌تر پیوند می‌زند."
     },
     {
       "id": 12,
@@ -271,7 +282,8 @@
       "popularity":7,
       "diversity":8,
       "check-resume":7,
-      "company-image":"./src/assets/images/company-image/12.jpg"
+      "company-image":"./src/assets/images/company-image/12.jpg",
+      "brief-info":"ما چشم انتظار پشامدهای آینده نیستیم. مابا انتخاب های هوشمند قواعد بازی آینده را میسازیم."
     },
     {
       "id": 13,
@@ -291,7 +303,8 @@
       "popularity":5,
       "diversity":7,
       "check-resume":4,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 14,
@@ -311,7 +324,8 @@
       "popularity":9,
       "diversity":6,
       "check-resume":6,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 15,
@@ -331,7 +345,8 @@
       "popularity":9,
       "diversity":10,
       "check-resume":8,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 16,
@@ -351,7 +366,8 @@
       "popularity":9,
       "diversity":8,
       "check-resume":6,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
 
     {
@@ -372,7 +388,8 @@
       "popularity":9,
       "diversity":8,
       "check-resume":6,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 18,
@@ -392,7 +409,8 @@
       "popularity":10,
       "diversity":4,
       "check-resume":8,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 19,
@@ -412,7 +430,8 @@
       "popularity":5,
       "diversity":8,
       "check-resume":7,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 20,
@@ -420,7 +439,7 @@
       "classId": 1,
       "contractId":1,
       "jobTitle": "برنامه‌نویس فرانت اند (Front-End-Mid Level)",
-      "organizationTitle-fa": "موسسه خدمات مدیریت و فناوری رشد قلم‌چی",
+      "organizationTitle-fa": "موسسه خدمات فناوری قلم‌چی",
       "organizationTitle-en": "GMTII",
       "orgState": "تهران",
       "orgCity": "تهران",
@@ -432,7 +451,8 @@
       "popularity":4,
       "diversity":3,
       "check-resume":5,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 21,
@@ -452,7 +472,8 @@
       "popularity":6,
       "diversity":7,
       "check-resume":5,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 22,
@@ -460,19 +481,20 @@
       "classId": 2,
       "contractId":1,
       "jobTitle": "برنامه‌نویس دات نت(ASP.NET)",
-      "organizationTitle-fa": "وب 24",
-      "organizationTitle-en": "Web24",
+      "organizationTitle-fa": "آراد",
+      "organizationTitle-en": "Arad",
       "orgState": "تهران",
       "orgCity": "تهران",
       "contractType": "قرارداد تمام‌وقت",
       "salary": "حقوق توافقی",
       "duration": "۵ روز پیش",
       "emergency": false,
-      "image-src": "./src/assets/images/organization-icon/Arpa.webp",
+      "image-src": "./src/assets/images/organization-icon/Arad.webp",
       "popularity":9,
       "diversity":8,
       "check-resume":6,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 23,
@@ -492,7 +514,8 @@
       "popularity":8,
       "diversity":9,
       "check-resume":6,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 24,
@@ -512,7 +535,8 @@
       "popularity":2,
       "diversity":4,
       "check-resume":3,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 25,
@@ -532,7 +556,8 @@
       "popularity":10,
       "diversity":7,
       "check-resume":8,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 26,
@@ -552,7 +577,8 @@
       "popularity":4,
       "diversity":5,
       "check-resume":2,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 27,
@@ -572,7 +598,8 @@
       "popularity":8,
       "diversity":8,
       "check-resume":6,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 28,
@@ -592,7 +619,8 @@
       "popularity":7,
       "diversity":8,
       "check-resume":7,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 29,
@@ -612,7 +640,8 @@
       "popularity":5,
       "diversity":7,
       "check-resume":4,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 30,
@@ -632,7 +661,8 @@
       "popularity":9,
       "diversity":6,
       "check-resume":6,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 31,
@@ -652,7 +682,8 @@
       "popularity":9,
       "diversity":10,
       "check-resume":8,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     },
     {
       "id": 32,
@@ -672,7 +703,8 @@
       "popularity":9,
       "diversity":8,
       "check-resume":6,
-      "company-image":null
+      "company-image":null,
+      "brief-info":""
     }
 
   ]

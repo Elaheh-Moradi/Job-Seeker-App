@@ -16,5 +16,7 @@ export default {
       'sm': {'max': '767px'},  // Applies to screens 767px and below (mobile only)
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ]
 }

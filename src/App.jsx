@@ -59,6 +59,7 @@ function App() {
             !isInit ? (
               <div>Loading...</div> // Show loading until token is checked
             ) : (
+              // <Navigate to="/home" />
               <Navigate to={token ? "/home" : "/login"} replace />
             )
           }
