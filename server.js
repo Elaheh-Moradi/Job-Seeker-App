@@ -24,17 +24,43 @@ server.post("/users", (req, res) => {
     res.status(401).json({ error: "Invalid credentials" });
     return;
   }
-
-  const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, {
+  
+  const token = jwt.sign({ id: user.id, email: user.email, username: user.name}, SECRET_KEY, {
     expiresIn: TOKEN_EXPIRATION,
   });
 
   res.status(200).json({ token });
 });
 
+
+// Register endpoint
+server.post("/register", (req, res) => {
+  const { email, password, name } = req.body;
+
+  if (!email || !password || !name) {
+    return res.status(400).json({ error: "Email, password, and name are required." });
+  }
+
+  const existingUser = router.db.get("users").find({ email }).value();
+  if (existingUser) {
+    return res.status(409).json({ error: "User already exists." });
+  }
+
+  const newUser = {
+    id: Date.now(),
+    email,
+    password,
+    name
+  };
+
+  router.db.get("users").push(newUser).write();
+
+  res.status(201).json({ user: newUser });
+});
+
 // Middleware to verify JWT for protected routes
 server.use((req, res, next) => {
-  if (req.path === "/users" || req.method === "GET") {
+  if (req.path === "/users" || req.method === "GET"|| req.path === "/register") {
     return next();
   }
 

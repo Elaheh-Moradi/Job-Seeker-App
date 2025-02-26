@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import citySlice from "./city-slice";
 import jobSlice from "./job-slice";
 import filterSlice from "./filter-slice";
+import authSlice from "./auth-slice";
 
 export const store = configureStore({
   reducer: {
     city: citySlice.reducer,
     job:jobSlice.reducer,
-    filter:filterSlice.reducer
+    filter:filterSlice.reducer,
+    auth:authSlice.reducer
   },
 });

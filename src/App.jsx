@@ -6,21 +6,23 @@ import Layout from "../src/pages/layout/Layout.jsx";
 import SearchJobPage from "./pages/menu/SearchJobPage.jsx";
 import HomePage from "./pages/menu/HomePage.jsx";
 import Test from "./Test.jsx";
+import EnterJobSeeker from "./pages/login/EnterJobSeeker.jsx";
+import RegisterJobSeeker from "./pages/login/RegisterJobSeeker.jsx";
 
 
 
 function App() {
-  const [token, setToken] = useState(localStorage.getItem("authToken"));
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const [isInit, setIsInit] = useState(false);
 
   const handleLogin = (newToken) => {
     setToken(newToken);
-    localStorage.setItem("authToken", newToken); // Save token to localStorage
+    localStorage.setItem("token", newToken); // Save token to localStorage
   };
 
   const handleLogout = () => {
     setToken(null);
-    localStorage.removeItem("authToken");
+    localStorage.removeItem("token");
   };
 
   useEffect(() => {
@@ -42,9 +44,10 @@ function App() {
   }
 
   const ProtectedRoute = ({ children }) => {
-    if (!token) {
-      return <Navigate to="/login" replace />; // Redirect to login if not authenticated
-    }
+    // if (!token) {
+    //   return <Navigate to="/login" replace />; // Redirect to login if not authenticated
+    // }
+    
     return children; // Render the child components if authenticated
   };
 
@@ -53,14 +56,17 @@ function App() {
       <Routes>
         {/* Fallback route */}
         <Route path="/test" element={<Test/>}></Route>
+        <Route path="/login/user" element={<Login type="login" onLogin={handleLogin}/>} />
+        <Route path="/join/user" element={<Login type="join" onLogin={handleLogin}/>} />
+        
       <Route
           path="*"
           element={
             !isInit ? (
               <div>Loading...</div> // Show loading until token is checked
             ) : (
-              // <Navigate to="/home" />
-              <Navigate to={token ? "/home" : "/login"} replace />
+              <Navigate to="/home" />
+              // <Navigate to={token ? "/home" : "/login"} replace />
             )
           }
         />

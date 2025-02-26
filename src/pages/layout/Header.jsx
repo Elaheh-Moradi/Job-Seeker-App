@@ -4,9 +4,14 @@ import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
 import DiamondRoundedIcon from "@mui/icons-material/DiamondRounded";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
+import LoginSharpIcon from "@mui/icons-material/LoginSharp";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
+import { useDispatch, useSelector } from "react-redux";
+import { authActions } from "../../store/auth-slice";
+import { LOGIN_TAB_1 } from "../../constants/names";
+import jwtDecode from "jwt-decode";
 
 const userDashboard = [
   "درخواست های من",
@@ -21,7 +26,26 @@ const userDashboard = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [userName, setUserName] = useState();
+  const [token, setToken] = useState();
   const dropdownRef = useRef(null);
+
+  const auth = localStorage.getItem("token");
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setToken(auth);
+  }, [auth]);
+
+  useEffect(() => {
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      setUserName(decodedToken.username);
+    }
+  }, [token]);
+  // const decodedToken = jwtDecode(token);
 
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
@@ -53,14 +77,20 @@ export default function Header() {
           className=" flex justify-center items-center list-none mr-[10vh] "
         >
           <li className="relative pt-6 pb-6 pl-3.5 pr-3.5 hover:bg-[#555]">
-            <Link to="/home" class="flex items-center text-[#fff] text-[14px] font-medium leading-relaxed ">
+            <Link
+              to="/home"
+              class="flex items-center text-[#fff] text-[14px] font-medium leading-relaxed "
+            >
               <HomeIcon style={{ color: "#fff", fontSize: "1.5rem" }} />
               خانه
             </Link>
             <span class="absolute top-0 bottom-0 right-0 w-0.5 h-full bg-[rgba(0, 0, 0, .2)] shadow-[0_0px_1px_rgba(255,255,255,0.5)]"></span>
           </li>
           <li className="pt-6 pb-6 pl-3.5 pr-3.5 relative hover:bg-[#555]">
-            <Link to="/search-job" class="flex items-center text-[#fff] text-[14px] font-medium leading-relaxed">
+            <Link
+              to="/search-job"
+              class="flex items-center text-[#fff] text-[14px] font-medium leading-relaxed"
+            >
               <SearchRoundedIcon
                 style={{ color: "#fff", fontSize: "1.5rem" }}
               />
@@ -101,59 +131,98 @@ export default function Header() {
             <span class="absolute top-0 bottom-0 right-0 w-0.5 h-full bg-[rgba(0, 0, 0, .2)] shadow-[0_0px_1px_rgba(255,255,255,0.5)]"></span>
           </div>
           {/* DropDown Button */}
-          <div className=" pt-6 pb-6 pl-3.5 pr-3.5">
-            <div dir="rtl" className=" relative " ref={dropdownRef}>
-              <button
-                id="dropdownDefaultButton"
-                data-dropdown-toggle="dropdown"
-                className={`min-w-[200px] text-white bg-[#555]  hover:bg-[#666]  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between ${
-                  isOpen ? "bg-[#666]" : "bg-[#555]"
-                }`}
-                style={{ boxShadow: "inset 0 -3px 0 0 #363636" }}
-                type="button"
-                onClick={toggleDropdown}
+          {!token ? (
+            <div className="flex justify-between items-center space-x-4 px-[5%] whitespace-nowrap">
+              <div
+                className="text-[#E5E5E5] flex justify-between space-x-2 items-center"
+                onClick={() => navigate("/login/user")}
               >
-                <PersonRoundedIcon
-                  style={{ color: "#888", fontSize: "1.5rem" }}
+                <span className="text-[13px]">ورود کارجو</span>
+                <LoginSharpIcon
+                  style={{
+                    color: "#888",
+                    fontSize: "1rem",
+                    fontWeight: "bold",
+                    transform: "scaleX(-1)",
+                  }}
                 />
-                الهه مرادی
-                {/* arrow icon */}
-                <svg
-                  className="w-2.5 h-2.5 ms-3 text-[#888]"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
-              {isOpen && (
-                <div className="z-10 absolute mt-2 bg-[#363636] rounded-lg shadow ">
-                  {/* Tringle above dropdown menu */}
-                  <div className="absolute border-b-[#333] top-[-8px] left-4 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[8px] border-l-transparent border-r-transparent"></div>
-
-                  <ul className="py-2 text-sm text-gray-700">
-                    {userDashboard.map((item, index) => (
-                      <li
-                        key={index}
-                        className=" text-[#f5f5f5] pt-2.5 pr-3.5 pb-2.5 pl-3.5 hover:bg-[#282828] whitespace-nowrap bg-[#363636]"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              </div>
+              <div
+                className="text-[#E5E5E5] flex justify-between space-x-2 items-center"
+                onClick={() => navigate("/join/user")}
+              >
+                <span className="text-[13px]">ثبت‌نام کارجو</span>
+                <PersonRoundedIcon
+                  style={{ color: "#888", fontSize: "1rem" }}
+                />
+              </div>
             </div>
-          </div>
-          <div className="relative flex items-center justify-center">
+          ) : (
+            <div className=" pt-6 pb-6 pl-3.5 pr-3.5">
+              <div dir="rtl" className=" relative " ref={dropdownRef}>
+                <button
+                  id="dropdownDefaultButton"
+                  data-dropdown-toggle="dropdown"
+                  className={`min-w-[200px] text-white bg-[#555]  hover:bg-[#666]  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between ${
+                    isOpen ? "bg-[#666]" : "bg-[#555]"
+                  }`}
+                  style={{ boxShadow: "inset 0 -3px 0 0 #363636" }}
+                  type="button"
+                  onClick={toggleDropdown}
+                >
+                  <PersonRoundedIcon
+                    style={{ color: "#888", fontSize: "1.5rem" }}
+                  />
+                  {userName}
+                  {/* arrow icon */}
+                  <svg
+                    className="w-2.5 h-2.5 ms-3 text-[#888]"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                {isOpen && (
+                  <div className="z-10 absolute mt-2 bg-[#363636] rounded-lg shadow ">
+                    {/* Tringle above dropdown menu */}
+                    <div className="absolute border-b-[#333] top-[-8px] left-4 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[8px] border-l-transparent border-r-transparent"></div>
+
+                    <ul className="py-2 text-sm text-gray-700">
+                      {userDashboard.map((item, index) => (
+                        <li
+                          key={index}
+                          className=" text-[#f5f5f5] pt-2.5 pr-3.5 pb-2.5 pl-3.5 hover:bg-[#282828] whitespace-nowrap bg-[#363636]"
+                        onClick={()=>{
+                          if (userDashboard.length===index+1) {
+                            dispatch(authActions.logout())
+                            // navigate('/login/user')
+                            toggleDropdown()
+
+                          }else{
+                            return;
+                          }
+                          
+                        }}
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+          <div className="relative flex items-center justify-center ml-3">
             {/* Bell Icon */}
             <NotificationsNoneRoundedIcon
               fontSize="medium"
@@ -162,12 +231,12 @@ export default function Header() {
 
             {/* Badge */}
             <div className="absolute top-0 left-0 bg-red-500 text-white text-[11px] rounded-[4px] w-4 h-4 flex items-center justify-center translate-x-[-4px] -translate-y-[3px]">
-             <p className="text-center">3</p>
+              <p className="text-center">3</p>
             </div>
           </div>
         </div>
       </div>
-      <BurgerMenu/>
+      <BurgerMenu />
     </>
   );
 }
