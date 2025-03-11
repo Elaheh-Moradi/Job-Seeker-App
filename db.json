@@ -11,28 +11,89 @@
       "name": "مریم تهرانی",
       "email": "email2@gmail.com",
       "password": "password2"
+    },
+    {
+      "id": 1740636904388,
+      "email": "email3@gmail.com",
+      "password": "password1",
+      "name": "الهه مرادی"
+    },
+    {
+      "id": 1740637645013,
+      "email": "email4@gmail.com",
+      "password": "password4",
+      "name": "user4"
+    },
+    {
+      "id": 1740641320173,
+      "email": "email6@gmail.com",
+      "password": "password6",
+      "name": "user6"
+    },
+    {
+      "id": 1740720444975,
+      "email": "email5@gmail.com",
+      "password": "password5",
+      "name": "username5"
     }
   ],
   "stateOptions": [
-    { "id": 0, "name": "همه استان‌ها" },
-    { "id": 1, "name": "تهران" },
-    { "id": 2, "name": "خراسان رضوی" },
-    { "id": 3, "name": "گلستان" },
-    { "id": 4, "name": "فارس" },
-    { "id": 5, "name": "خراسان شمالی" }
+    {
+      "id": 0,
+      "name": "همه استان‌ها"
+    },
+    {
+      "id": 1,
+      "name": "تهران"
+    },
+    {
+      "id": 2,
+      "name": "خراسان رضوی"
+    },
+    {
+      "id": 3,
+      "name": "گلستان"
+    },
+    {
+      "id": 4,
+      "name": "فارس"
+    },
+    {
+      "id": 5,
+      "name": "خراسان شمالی"
+    }
   ],
-
   "classOptions": [
-    { "id": 0, "title": "همه دسته بندی‌ها" },
-    { "id": 1, "title": "برنامه نویس Front-End" },
-    { "id": 2, "title": "برنامه نویس Back-End" },
-    { "id": 3, "title": "برنامه نویس Full Stack" }
+    {
+      "id": 0,
+      "title": "همه دسته بندی‌ها"
+    },
+    {
+      "id": 1,
+      "title": "برنامه نویس Front-End"
+    },
+    {
+      "id": 2,
+      "title": "برنامه نویس Back-End"
+    },
+    {
+      "id": 3,
+      "title": "برنامه نویس Full Stack"
+    }
   ],
-
   "contractType": [
-    { "id": 1, "title": "تمام وقت" },
-    { "id": 2, "title": "پاره وقت" },
-    { "id": 3, "title": "دورکاری" }
+    {
+      "id": 1,
+      "title": "تمام وقت"
+    },
+    {
+      "id": 2,
+      "title": "پاره وقت"
+    },
+    {
+      "id": 3,
+      "title": "دورکاری"
+    }
   ],
   "jobOffers": [
     {
@@ -40,6 +101,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس فرانت اند(Front-End)",
       "organizationTitle-fa": "شبکه اطلاع رسانی طلا، سکه و ارز",
       "organizationTitle-en": "TGJU",
@@ -61,6 +123,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 2,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس فرانت اند (ASP.Net Front-End)",
       "organizationTitle-fa": "رایانت ایرسا",
       "organizationTitle-en": "Irsa Rayanet",
@@ -82,6 +145,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 3,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس ارشد فرانت اند (Front-End-دورکاری)",
       "organizationTitle-fa": "ابرسام داده گستر شمال",
       "organizationTitle-en": "Abarsam Dade Gostar Shoma",
@@ -103,6 +167,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس فرانت اند (Front-End-Mid Level)",
       "organizationTitle-fa": "موسسه خدمات فناوری قلم‌چی",
       "organizationTitle-en": "GMTII",
@@ -124,6 +189,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس ارشد فرانت اند (Senior Front-End Developer)",
       "organizationTitle-fa": "آریانا پرداز آینده",
       "organizationTitle-en": "Arpa",
@@ -145,6 +211,7 @@
       "stateId": 1,
       "classId": 2,
       "contractId": 1,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس دات نت(ASP.NET)",
       "organizationTitle-fa": "آراد",
       "organizationTitle-en": "Arad",
@@ -166,6 +233,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس فرانت اند (Front-End-vue js)",
       "organizationTitle-fa": "رد لیمو",
       "organizationTitle-en": "Red Limoo",
@@ -187,6 +255,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس Vue3)Front-End)",
       "organizationTitle-fa": "زیوش",
       "organizationTitle-en": "Zeevash",
@@ -208,6 +277,7 @@
       "stateId": 3,
       "classId": 3,
       "contractId": 1,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس Full Stack (گرگان)",
       "organizationTitle-fa": "الگوریتم سازان آرن",
       "organizationTitle-en": "Algoritm Sazan ARN",
@@ -229,6 +299,7 @@
       "stateId": 2,
       "classId": 1,
       "contractId": 1,
+      "lastNews": false,
       "jobTitle": "Front-End Developer (مشهد)",
       "organizationTitle-fa": "گراف",
       "organizationTitle-en": "Graph",
@@ -250,6 +321,7 @@
       "stateId": 4,
       "classId": 3,
       "contractId": 3,
+      "lastNews": true,
       "jobTitle": "برنامه‌نویس Net) Full-Stack.-شیراز)",
       "organizationTitle-fa": "پویا رایانه دنا",
       "organizationTitle-en": "PRDCo",
@@ -257,7 +329,7 @@
       "orgCity": "شیراز",
       "contractType": "قرارداد دورکاری",
       "salary": "حقوق توافقی",
-      "duration": "۲۴ روز پیش",
+      "duration": "۲۴ دقیقه پیش",
       "emergency": false,
       "image-src": "./src/assets/images/organization-icon/PRDCo.webp",
       "popularity": 8,
@@ -271,6 +343,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews": true,
       "jobTitle": "برنامه‌نویس فرانت اند(Front-End)",
       "organizationTitle-fa": "عدلا",
       "organizationTitle-en": "Addlaw",
@@ -292,6 +365,7 @@
       "stateId": 1,
       "classId": 2,
       "contractId": 3,
+      "lastNews": true,
       "jobTitle": "WordPress Developer (توسعه دهنده وردپرس-دورکاری)",
       "organizationTitle-fa": "پیکان",
       "organizationTitle-en": "Peykan",
@@ -313,6 +387,7 @@
       "stateId": 2,
       "classId": 1,
       "contractId": 1,
+      "lastNews": true,
       "jobTitle": "Front-End Developer (Vue-Nuxt-مشهد)",
       "organizationTitle-fa": "یارا نرم افزار املاک(شعبه تهران)",
       "organizationTitle-en": "Yara Narm Afzar Amlak",
@@ -334,6 +409,7 @@
       "stateId": 1,
       "classId": 2,
       "contractId": 1,
+      "lastNews": true,
       "jobTitle": "برنامه‌نویس هوش مصنوعی (AI-دورکاری)",
       "organizationTitle-fa": "توجت",
       "organizationTitle-en": "Tojet",
@@ -355,6 +431,7 @@
       "stateId": 5,
       "classId": 2,
       "contractId": 3,
+      "lastNews": true,
       "jobTitle": "برنامه‌نویس NodeJs) Back-End-بجنورد-دورکاری)",
       "organizationTitle-fa": "صنعت گستر مبتکر",
       "organizationTitle-en": "Sanat Gostar",
@@ -363,7 +440,7 @@
       "contractType": "قرارداد دورکاری",
       "salary": "حقوق توافقی",
       "duration": "امروز",
-      "emergency": true,
+      "emergency": false,
       "image-src": null,
       "popularity": 9,
       "diversity": 8,
@@ -371,12 +448,12 @@
       "company-image": null,
       "brief-info": ""
     },
-
     {
       "id": 17,
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس فرانت اند(Front-End)",
       "organizationTitle-fa": "شبکه اطلاع رسانی طلا، سکه و ارز",
       "organizationTitle-en": "TGJU",
@@ -398,6 +475,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 2,
+      "lastNews": false,
       "jobTitle": "برنامه‌نویس فرانت اند (ASP.Net Front-End)",
       "organizationTitle-fa": "رایانت ایرسا",
       "organizationTitle-en": "Irsa Rayanet",
@@ -419,6 +497,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 3,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس ارشد فرانت اند (Front-End-دورکاری)",
       "organizationTitle-fa": "ابرسام داده گستر شمال",
       "organizationTitle-en": "Abarsam Dade Gostar Shoma",
@@ -440,6 +519,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس فرانت اند (Front-End-Mid Level)",
       "organizationTitle-fa": "موسسه خدمات فناوری قلم‌چی",
       "organizationTitle-en": "GMTII",
@@ -461,6 +541,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس ارشد فرانت اند (Senior Front-End Developer)",
       "organizationTitle-fa": "آریانا پرداز آینده",
       "organizationTitle-en": "Arpa",
@@ -482,6 +563,7 @@
       "stateId": 1,
       "classId": 2,
       "contractId": 1,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس دات نت(ASP.NET)",
       "organizationTitle-fa": "آراد",
       "organizationTitle-en": "Arad",
@@ -503,6 +585,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس فرانت اند (Front-End-vue js)",
       "organizationTitle-fa": "رد لیمو",
       "organizationTitle-en": "Red Limoo",
@@ -524,6 +607,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس Vue3)Front-End)",
       "organizationTitle-fa": "زیوش",
       "organizationTitle-en": "Zeevash",
@@ -545,6 +629,7 @@
       "stateId": 3,
       "classId": 3,
       "contractId": 1,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس Full Stack (گرگان)",
       "organizationTitle-fa": "الگوریتم سازان آرن",
       "organizationTitle-en": "Algoritm Sazan ARN",
@@ -566,6 +651,7 @@
       "stateId": 2,
       "classId": 1,
       "contractId": 1,
+      "lastNews":false,
       "jobTitle": "Front-End Developer (مشهد)",
       "organizationTitle-fa": "گراف",
       "organizationTitle-en": "Graph",
@@ -587,6 +673,7 @@
       "stateId": 4,
       "classId": 3,
       "contractId": 3,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس Net) Full-Stack.-شیراز)",
       "organizationTitle-fa": "پویا رایانه دنا",
       "organizationTitle-en": "PRDCo",
@@ -608,6 +695,7 @@
       "stateId": 1,
       "classId": 1,
       "contractId": 1,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس فرانت اند(Front-End)",
       "organizationTitle-fa": "عدلا",
       "organizationTitle-en": "Addlaw",
@@ -629,6 +717,7 @@
       "stateId": 1,
       "classId": 2,
       "contractId": 3,
+      "lastNews":false,
       "jobTitle": "WordPress Developer (توسعه دهنده وردپرس-دورکاری)",
       "organizationTitle-fa": "پیکان",
       "organizationTitle-en": "Peykan",
@@ -650,6 +739,7 @@
       "stateId": 2,
       "classId": 1,
       "contractId": 1,
+      "lastNews":false,
       "jobTitle": "Front-End Developer (Vue-Nuxt-مشهد)",
       "organizationTitle-fa": "یارا نرم افزار املاک(شعبه تهران)",
       "organizationTitle-en": "Yara Narm Afzar Amlak",
@@ -671,6 +761,7 @@
       "stateId": 1,
       "classId": 2,
       "contractId": 1,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس هوش مصنوعی (AI-دورکاری)",
       "organizationTitle-fa": "توجت",
       "organizationTitle-en": "Tojet",
@@ -692,6 +783,7 @@
       "stateId": 5,
       "classId": 2,
       "contractId": 3,
+      "lastNews":false,
       "jobTitle": "برنامه‌نویس NodeJs) Back-End-بجنورد-دورکاری)",
       "organizationTitle-fa": "صنعت گستر مبتکر",
       "organizationTitle-en": "Sanat Gostar",

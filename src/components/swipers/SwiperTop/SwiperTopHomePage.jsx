@@ -5,28 +5,33 @@ import DefaultImage from "../../../assets/images/organization-icon/Default.webp"
 import styles from "./SwiperTopHomePage.module.css";
 // import useFetch from "../../../hooks/useFetch";
 
-const SwiperTopHomePage = ({data}) => {
+const SwiperTopHomePage = ({ data }) => {
   // const { data } = useFetch("http://localhost:3000/jobOffers");
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef(null);
 
-
-useEffect(() => {
-  if (swiperRef.current && prevRef.current && nextRef.current) {
-    swiperRef.current.params.navigation.prevEl = prevRef.current;
-    swiperRef.current.params.navigation.nextEl = nextRef.current;
-    swiperRef.current.navigation.init();
-    swiperRef.current.navigation.update();
-  }
-}, [swiperRef.current, prevRef.current, nextRef.current, data]);
+  useEffect(() => {
+    if (swiperRef.current && prevRef.current && nextRef.current) {
+      swiperRef.current.params.navigation.prevEl = prevRef.current;
+      swiperRef.current.params.navigation.nextEl = nextRef.current;
+      swiperRef.current.navigation.init();
+      swiperRef.current.navigation.update();
+    }
+  }, [swiperRef.current, prevRef.current, nextRef.current, data]);
 
   return (
-    <div className="relative top-10 w-[60%] mx-auto ">
+    <div className="relative top-10 w-[75%] ml-[12%]  sm:w-full sm:ml-[10%]">
       <Swiper
         modules={[Navigation, Autoplay]}
-        spaceBetween={5}
-        slidesPerView={5}
+        slidesPerView={3}
+        spaceBetween={3}
+        breakpoints={{
+          767: {
+            slidesPerView: 5,
+            spaceBetween: 5,
+          },
+        }}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
@@ -36,7 +41,7 @@ useEffect(() => {
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
-          disableOnInteraction: false
+          disableOnInteraction: false,
         }}
       >
         {data.map((item, index) => (
@@ -56,7 +61,9 @@ useEffect(() => {
                   className="h-[80%] w-[80%] rounded-md mb-[20%]"
                 />
               )}
-              <span className="text-center whitespace-nowrap">{item["organizationTitle-fa"]}</span>
+              <div className="text-center w-[100px] whitespace-nowrap sm:whitespace-normal">
+                {item["organizationTitle-fa"]}
+              </div>
             </div>
           </SwiperSlide>
         ))}
@@ -64,12 +71,12 @@ useEffect(() => {
       <div
         ref={prevRef}
         style={{ fontWeight: "bold" }}
-        className={`swiper-button-prev ${styles["swiper-button-prev"]}`}
+        className={`swiper-button-prev ${styles["swiper-button-prev"]} `}
       ></div>
       <div
         ref={nextRef}
         style={{ fontWeight: "bold" }}
-        className={`swiper-button-next ${styles["swiper-button-next"]}`}
+        className={`swiper-button-next ${styles["swiper-button-next"]} `}
       ></div>
     </div>
   );

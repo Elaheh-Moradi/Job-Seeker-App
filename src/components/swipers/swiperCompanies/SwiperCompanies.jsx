@@ -13,11 +13,21 @@ const SwiperCompanies = ({ data }) => {
       <Swiper
         modules={[Pagination]}
         spaceBetween={20}
-        slidesPerView={3}
-         slidesPerGroup={3}
+        slidesPerView={1}
+         slidesPerGroup={1}
+         breakpoints={{
+          767: {
+            slidesPerView: 3,
+            spaceBetween: 3,
+          },
+          pagination:{
+            clickable:true,
+          }
+        }}
         //  autoHeight={true}
         pagination={{
           clickable: true,
+          enabled: false,
         }}
          className={styles["my-custom-swiper"]}
       >

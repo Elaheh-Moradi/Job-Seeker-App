@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { authActions } from "../../store/auth-slice";
 
-const EnterJobSeeker = ({onLogin}) => {
+const EnterJobSeeker = ({ onLogin }) => {
   const [inputs, setInput] = useState({
     email: "",
     password: "",
@@ -15,6 +15,7 @@ const EnterJobSeeker = ({onLogin}) => {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+  const dispatch=useDispatch()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,15 +29,16 @@ const EnterJobSeeker = ({onLogin}) => {
       if (response.status === 200) {
         const token = response.data.token;
         if (token) {
-        localStorage.setItem('token', token);
+          localStorage.setItem("token", token);
           onLogin(token); // Call onLogin with token
           setError(""); // Clear any error
+          dispatch(authActions.setEnter(true));
           navigate("/home"); // Redirect to home page
         }
       } else {
         setError("مشکلی در سرور ایجاد شده است.");
       }
-    } catch (error ) {        
+    } catch (error) {
       setError("آدرس ایمیل یا رمز عبور اشتباه است.");
     }
   };

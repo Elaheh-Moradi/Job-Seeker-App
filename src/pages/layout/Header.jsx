@@ -45,7 +45,6 @@ export default function Header() {
       setUserName(decodedToken.username);
     }
   }, [token]);
-  // const decodedToken = jwtDecode(token);
 
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
@@ -159,7 +158,7 @@ export default function Header() {
             </div>
           ) : (
             <div className=" pt-6 pb-6 pl-3.5 pr-3.5">
-              <div dir="rtl" className=" relative " ref={dropdownRef}>
+              <div dir="rtl" className=" relative" ref={dropdownRef}>
                 <button
                   id="dropdownDefaultButton"
                   data-dropdown-toggle="dropdown"
@@ -192,7 +191,7 @@ export default function Header() {
                   </svg>
                 </button>
                 {isOpen && (
-                  <div className="z-10 absolute mt-2 bg-[#363636] rounded-lg shadow ">
+                  <div className="z-10 absolute mt-2 bg-[#363636] rounded-lg shadow sm:z-2000 ">
                     {/* Tringle above dropdown menu */}
                     <div className="absolute border-b-[#333] top-[-8px] left-4 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[8px] border-l-transparent border-r-transparent"></div>
 

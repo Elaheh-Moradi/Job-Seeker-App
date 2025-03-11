@@ -9,24 +9,45 @@ import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
 import DiamondRoundedIcon from "@mui/icons-material/DiamondRounded";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
-const userDashboard = [
-  "درخواست های من",
-  "ایمیل های اطلاع رسانی من",
-  "فرصت های شغلی نشان شده",
-  "فرصت های شغلی پیشنهادی",
-  "رزومه ساز",
-  "مشاهده رزومه",
-  "تنظیمات حساب کاربری من",
-  "خروج",
-];
+import { useDispatch } from "react-redux";
+import { authActions } from "../../store/auth-slice";
+import jwtDecode from "jwt-decode";
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [userName, setUserName] = useState();
+  const [token, setToken] = useState();
   const dropdownRef = useRef(null);
   const menuRef = useRef(null);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const userDashboard = [
+    `${userName}`,
+    "درخواست های من",
+    "ایمیل های اطلاع رسانی من",
+    "فرصت های شغلی نشان شده",
+    "فرصت های شغلی پیشنهادی",
+    "رزومه ساز",
+    "مشاهده رزومه",
+    "تنظیمات حساب کاربری من",
+    "خروج",
+  ];
+
+  const auth = localStorage.getItem("token");
+
+  useEffect(() => {
+    setToken(auth);
+  }, [auth]);
+
+  useEffect(() => {
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      setUserName(decodedToken.username);
+    }
+  }, [token]);
 
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -78,12 +99,14 @@ const BurgerMenu = () => {
               className="fixed left-0 right-0 top-[10.5vh] text-[13px]  font-bold w-full overflow-hidden bg-[#555] text-[#fff]"
             >
               <ul className="flex flex-col" onClick={handleToggleMenu}>
-                <li className=" block border-b-[1px] border-b-gray-500 hover:bg-[#505050]">
-                  <div class="flex items-center pt-3 pb-3 pl-3.5 pr-3.5 text-[14px] font-medium leading-relaxed ">
-                    <HomeIcon style={{ fontSize: "1.5rem" }} />
-                    <span className="pr-2">خانه</span>
-                  </div>
-                </li>
+                <Link to="/home">
+                  <li className=" block border-b-[1px] border-b-gray-500 hover:bg-[#505050]">
+                    <div class="flex items-center pt-3 pb-3 pl-3.5 pr-3.5 text-[14px] font-medium leading-relaxed ">
+                      <HomeIcon style={{ fontSize: "1.5rem" }} />
+                      <span className="pr-2">خانه</span>
+                    </div>
+                  </li>
+                </Link>
                 <li className=" block hover:bg-[#505050]">
                   <Link
                     to="/search-job"
@@ -137,33 +160,61 @@ const BurgerMenu = () => {
               <p className="text-center">3</p>
             </div>
           </div>
-
-          <PersonRoundedIcon
-            className="text-[#888] relative"
-            style={{ fontSize: "35px" }}
+          <div
+            // data-dropdown-toggle="dropdown"
+            // ref={dropdownRef}
             onClick={toggleDropdown}
-          />
+          >
+            <PersonRoundedIcon
+              className="text-[#888] relative"
+              style={{ fontSize: "35px" }}
+            />
+          </div>
+          {isDropdownOpen &&
+            (token ? (
+              <div className="z-10 absolute top-16 left-1 bg-[#363636] rounded-lg shadow sm:z-1000">
+                {/* Tringle above dropdown menu */}
+                <div className="absolute border-b-[#333] top-[-8px] left-4 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[8px] border-l-transparent border-r-transparent"></div>
 
-          {isDropdownOpen && (
-            <div
-              ref={dropdownRef}
-              className="z-10 absolute top-16 left-1 bg-[#363636] rounded-lg shadow "
-            >
-              {/* Tringle above dropdown menu */}
-              <div className="absolute border-b-[#333] top-[-8px] left-4 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[8px] border-l-transparent border-r-transparent"></div>
-
-              <ul className="py-2 text-sm text-gray-700">
-                {userDashboard.map((item, index) => (
+                <ul className="py-2 text-sm text-gray-700">
+                  {userDashboard.map((item, index) => (
+                    <li
+                      key={index}
+                      className={` text-[#f5f5f5] pt-2.5 pr-3.5 pb-2.5 pl-3.5 hover:bg-[#282828] whitespace-nowrap bg-[#363636] ${index===0?"text-[#888888]":""}`}
+                      onClick={() => {
+                        console.log(`Clicked item ${index}: ${item}`); // Debugging log
+                        if (userDashboard.length - 1 === index) {
+                          dispatch(authActions.logout());
+                          toggleDropdown();
+                        } else {
+                          return;
+                        }
+                      }}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div className="z-10 absolute top-16 left-1 bg-[#363636] rounded-lg shadow sm:z-1000 sm:w-[40%] sm:rounded-sm">
+                <div className="absolute border-b-[#333] top-[-8px] left-4 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[8px] border-l-transparent border-r-transparent"></div>
+                <ul className="py-2 text-sm text-gray-700 ">
                   <li
-                    key={index}
                     className=" text-[#f5f5f5] pt-2.5 pr-3.5 pb-2.5 pl-3.5 hover:bg-[#282828] whitespace-nowrap bg-[#363636]"
+                    onClick={() => navigate("/login/user")}
                   >
-                    {item}
+                    ورود کارجو
                   </li>
-                ))}
-              </ul>
-            </div>
-          )}
+                  <li
+                    className=" text-[#f5f5f5] pt-2.5 pr-3.5 pb-2.5 pl-3.5 hover:bg-[#282828] whitespace-nowrap bg-[#363636] "
+                    onClick={() => navigate("/join/user")}
+                  >
+                    ثبت‌نام کارجو
+                  </li>
+                </ul>
+              </div>
+            ))}
         </div>
       </div>
     </>

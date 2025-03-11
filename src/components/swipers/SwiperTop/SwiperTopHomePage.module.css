@@ -35,5 +35,11 @@
   .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 20px !important;
+}
 
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
 }

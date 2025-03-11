@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { jobActions } from "../../store/job-slice";
 import { filterActions } from "../../store/filter-slice";
 import { cityActions } from "../../store/city-slice";
+import { useNavigate } from "react-router-dom";
 
 function debounce(func, delay) {
   let timeout;
@@ -34,6 +35,7 @@ const SearchBar = () => {
   const isClose = useSelector((state) => state.filter.isClose);
 
   const dispatch = useDispatch();
+  const navigate=useNavigate();
 
   const normalizeText = (str) => {
     return str
@@ -45,6 +47,14 @@ const SearchBar = () => {
       .replace(/[^a-zA-Z0-9\u0600-\u06FF\s]/g, "")
       .replace(/\s+/g, ""); // Convert to lowercase and remove special characters
   };
+
+useEffect(()=>{
+  dispatch(filterActions.setJobTitleFilter(""))
+  dispatch(jobActions.setClearTypeId());
+  dispatch(cityActions.setClearCityId());
+  dispatch(jobActions.setClearContractId())
+},[])
+
 
   const handleFilterAllFilds = (searchQuery) => {
     let filteredResults = null;
@@ -102,10 +112,12 @@ const SearchBar = () => {
     dispatch(cityActions.setCityId(cityOption));
     dispatch(filterActions.setCityFlag(true))
     dispatch(jobActions.setClassId(typeOption));
-    // dispatch(filterActions.setShowFilters(true))
+    
     
     debouncedSearch(query);
     dispatch(filterActions.setJobTitleFilter(query));
+
+    navigate("/search-job")
   };
 
   return (
