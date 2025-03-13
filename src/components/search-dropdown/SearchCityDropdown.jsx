@@ -49,12 +49,9 @@ export default function SearchCityDropdown(props) {
   const handleOptionClick = (option) => {
     if (option !== null) {
       dispatch(cityActions.setCityOption(+option));
-      //dispatch(filterActions.setShowFilters(true))
     }
     const filteredId = data.filter((item) => item.id === +option);
     setSelectedOption(filteredId[0].name);
-    
-    //  dispatch(cityActions.setCityId(+option));
     
     dispatch(cityActions.setCityName(filteredId[0].name));
     setIsOpen(false);

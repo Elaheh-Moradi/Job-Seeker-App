@@ -3,11 +3,15 @@ import SwiperCompanies from "../../components/swipers/swiperCompanies/SwiperComp
 import SwiperTopHomePage from "../../components/swipers/SwiperTop/SwiperTopHomePage";
 import Welcome from "../../components/Welcome";
 import useFetch from "../../hooks/useFetch";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import jwtDecode from "jwt-decode";
 import LastNews from "../../components/last-news/LastNews";
 import EnterBox from "../../components/EnterBox";
 import SearchBar from "../../components/search-bar/SearchBar";
+import { filterActions } from "../../store/filter-slice";
+import { jobActions } from "../../store/job-slice";
+import { cityActions } from "../../store/city-slice";
+import OfferList from "../../components/offer/OfferList";
 
 export default function HomePage() {
   const { data } = useFetch("http://localhost:3000/jobOffers");
@@ -15,15 +19,24 @@ export default function HomePage() {
   const enter = useSelector((state) => state.auth.enter);
   const [userName, setUserName] = useState();
   const [token, setToken] = useState();
-
+  const [flag, setFlag] = useState(true);
   const auth = localStorage.getItem("token");
+  const dispatch = useDispatch();
+
+
+useEffect(()=>{
+  dispatch(filterActions.setJobTitleFilter(""))
+  dispatch(jobActions.setClearTypeId());
+  dispatch(cityActions.setClearCityId());
+  dispatch(jobActions.setClearContractId())
+},[])
 
   useEffect(() => {
     setToken(auth);
   }, [auth]);
 
   useEffect(() => {
-    if (token ) {
+    if (token) {
       const decodedToken = jwtDecode(token);
       setUserName(decodedToken.username);
     }
@@ -35,11 +48,12 @@ export default function HomePage() {
   return (
     <>
       <div className="overflow-x-hidden">
-        <SearchBar/>
+        <SearchBar flag={flag} setFlag={setFlag}  />
         {welcome && enter && <Welcome title={`${userName} عزیز، خوش آمدید.`} />}
         <SwiperTopHomePage data={data} />
-        {!token&&<EnterBox/>}
-        <LastNews data={data}/>
+        {!token && <EnterBox />}
+        {!token&&<LastNews data={data} />}
+        {token&&<OfferList/>}
         <SwiperCompanies data={data} />
       </div>
     </>

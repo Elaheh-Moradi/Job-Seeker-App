@@ -26,6 +26,7 @@ const Filter = () => {
   const showFilters = useSelector((state) => state.filter.showFilters);
   const smallMode = useSelector((state) => state.filter.smallMode);
 
+
   const dispatch = useDispatch();
 
   const handleHideJobTitleFilter = () => {
@@ -117,7 +118,7 @@ const Filter = () => {
       });
       dispatch(filterActions.setShowFilters(false));
     }
-  }, [cityId, showFilters]);
+  }, [cityId, showFilters,cityOptions]);
 
   useEffect(() => {
     if (!smallMode) {
@@ -132,7 +133,7 @@ const Filter = () => {
       });
       dispatch(filterActions.setShowFilters(false));
     }
-  }, [typeId, showFilters]);
+  }, [typeId, showFilters,typeOptions]);
 
   useEffect(() => {
     if (!smallMode) {
@@ -146,7 +147,7 @@ const Filter = () => {
       });
       dispatch(filterActions.setShowFilters(false));
     }
-  }, [contractId, showFilters]);
+  }, [contractId, showFilters,contractOptions]);
 
   return (
     <>

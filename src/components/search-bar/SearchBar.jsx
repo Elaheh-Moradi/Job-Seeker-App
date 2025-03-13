@@ -20,9 +20,9 @@ function debounce(func, delay) {
   };
 }
 
-const SearchBar = () => {
+const SearchBar = ({ flag, setFlag }) => {
   const [query, setQuery] = useState("");
-  const [isOpen,setIsOpen]=useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const { data } = useFetch("http://localhost:3000/jobOffers");
   const cityId = useSelector((state) => state.city.cityID);
   const typeId = useSelector((state) => state.job.classId);
@@ -35,7 +35,7 @@ const SearchBar = () => {
   const isClose = useSelector((state) => state.filter.isClose);
 
   const dispatch = useDispatch();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const normalizeText = (str) => {
     return str
@@ -48,17 +48,12 @@ const SearchBar = () => {
       .replace(/\s+/g, ""); // Convert to lowercase and remove special characters
   };
 
-useEffect(()=>{
-  dispatch(filterActions.setJobTitleFilter(""))
-  dispatch(jobActions.setClearTypeId());
-  dispatch(cityActions.setClearCityId());
-  dispatch(jobActions.setClearContractId())
-},[])
-
-
-  const handleFilterAllFilds = (searchQuery) => {
+  const handleFilterAllFilds = (search) => {
     let filteredResults = null;
-
+    let searchQuery = search;
+    if (jobTitleFilter) {
+      searchQuery = jobTitleFilter;
+    }
     if (searchQuery === "") {
       filteredResults = data;
     } else {
@@ -73,51 +68,60 @@ useEffect(()=>{
     }
     // return filteredResults;
     if (cityId.length > 0 && !cityId.includes(0)) {
-      filteredResults= filteredResults.filter((item) => cityId.includes(item.stateId));
-    } 
+      filteredResults = filteredResults.filter((item) =>
+        cityId.includes(item.stateId)
+      );
+    }
 
     if (typeId.length > 0 && !typeId.includes(0)) {
-         filteredResults= filteredResults.filter((item) => typeId.includes(item.classId));
-      }
+      filteredResults = filteredResults.filter((item) =>
+        typeId.includes(item.classId)
+      );
+    }
 
     if (contractId.length > 0 && !contractId.includes(0)) {
-         filteredResults= filteredResults.filter((item) => contractId.includes(item.contractId));
-      }
-   
-    return filteredResults
+      filteredResults = filteredResults.filter((item) =>
+        contractId.includes(item.contractId)
+      );
+    }
+
+    return filteredResults;
   };
 
   const handleSearch = (searchQuery) => {
     const finalFilterResult = handleFilterAllFilds(searchQuery);
     if (smallMode) {
-      dispatch(jobActions.setTempJobs(finalFilterResult))
-    }else{
+      dispatch(jobActions.setTempJobs(finalFilterResult));
+    } else {
       dispatch(jobActions.setJobs(finalFilterResult));
     }
   };
 
   useEffect(() => {
     debouncedSearch(jobTitleFilter);
-  }, [jobTitleFilter, data, cityId,typeId,contractId]);
+    setQuery(jobTitleFilter);
+  }, [jobTitleFilter, data, cityId, typeId, contractId]);
 
   const debouncedSearch = debounce(handleSearch, 300);
 
   const handleButtonClick = () => {
-    
+    if (flag) {
+      //setFlag(false);
+      navigate("/search-job");
+    }
+
     dispatch(cityActions.setChangeDropDown());
     dispatch(jobActions.setChangeDropDown());
-    dispatch(jobActions.setClearTypeId());
-    dispatch(cityActions.setClearCityId());
-    dispatch(jobActions.setClearContractId());
-    dispatch(cityActions.setCityId(cityOption));
-    dispatch(filterActions.setCityFlag(true))
-    dispatch(jobActions.setClassId(typeOption));
-    
-    
-    debouncedSearch(query);
-    dispatch(filterActions.setJobTitleFilter(query));
 
-    navigate("/search-job")
+    dispatch(jobActions.setClearTypeId());
+    dispatch(jobActions.setClearContractId());
+    dispatch(cityActions.setClearCityId());
+    dispatch(cityActions.setCityId(cityOption));
+    dispatch(filterActions.setCityFlag(true));
+    dispatch(jobActions.setClassId(typeOption));
+
+    dispatch(filterActions.setJobTitleFilter(query));
+    debouncedSearch(query);
   };
 
   return (
@@ -137,7 +141,7 @@ useEffect(()=>{
               className="w-80 sm:w-full h-[45px] py-2 pr-10 text-[#9d9d9d] rounded-[3px] border-[1px] border-[#e5e5e5] focus:text-[#9d9d9d] focus:outline-none focus:shadow-[inset_0_-1px_0_1px_#d0d0d0]"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              onFocus={()=>setIsOpen(true)}
+              onFocus={() => setIsOpen(true)}
             />
             <SearchRoundedIcon
               style={{
@@ -150,11 +154,19 @@ useEffect(()=>{
             />
           </div>
           {/* job city search */}
-          <div className={`flex justify-center relative sm:w-full ${isOpen?"sm:flex":"sm:hidden"}`}>
+          <div
+            className={`flex justify-center relative sm:w-full ${
+              isOpen ? "sm:flex" : "sm:hidden"
+            }`}
+          >
             <SearchCityDropdown />
           </div>
           {/* job class search */}
-          <div className={`flex justify-center relative sm:w-full ${isOpen?"sm:flex":"sm:hidden"}`}>
+          <div
+            className={`flex justify-center relative sm:w-full ${
+              isOpen ? "sm:flex" : "sm:hidden"
+            }`}
+          >
             <SearchClassDropdown />
           </div>
           <Button

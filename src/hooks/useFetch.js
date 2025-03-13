@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 
 const useFetch = (url, options = {}) => {
   const [data, setData] = useState([]); // Holds the response data

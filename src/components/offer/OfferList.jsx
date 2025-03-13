@@ -6,12 +6,12 @@ import { useEffect, useMemo, useState } from "react";
 // import Filter from "../Filter.jsx";
 import FilterOld from "../FilterOld.jsx";
 import Filter from "../Filter.jsx";
-import TuneIcon from "@mui/icons-material/Tune";
 import FilterList from "../filter/FilterList.jsx";
+import TuneIcon from "@mui/icons-material/Tune";
 import { filterActions } from "../../store/filter-slice.jsx";
 import { jobActions } from "../../store/job-slice.jsx";
 
-export default function OfferList() {
+export default function OfferList(props) {
   let PageSize = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -98,15 +98,7 @@ export default function OfferList() {
 
             <Filter />
           </div>
-          {/* <div className="hidden sm:block ml-[2%] border border-gray-300">
-            <TuneIcon
-              style={{ color: "#555555" }}
-              onClick={() => {
-                setShowFilterList(true);
-                dispatch(filterActions.setSmallMode(true));
-              }}
-            />
-          </div> */}
+         
         </div>
         {currentTableData.map((cart, index) => (
           <OfferCart
