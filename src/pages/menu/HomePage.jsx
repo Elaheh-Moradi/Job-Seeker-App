@@ -20,16 +20,16 @@ export default function HomePage() {
   const [userName, setUserName] = useState();
   const [token, setToken] = useState();
   const [flag, setFlag] = useState(true);
+  const hastoken = useSelector((state) => state.auth.hastoken);
   const auth = localStorage.getItem("token");
   const dispatch = useDispatch();
 
-
-useEffect(()=>{
-  dispatch(filterActions.setJobTitleFilter(""))
-  dispatch(jobActions.setClearTypeId());
-  dispatch(cityActions.setClearCityId());
-  dispatch(jobActions.setClearContractId())
-},[])
+  useEffect(() => {
+    dispatch(filterActions.setJobTitleFilter(""));
+    dispatch(jobActions.setClearTypeId());
+    dispatch(cityActions.setClearCityId());
+    dispatch(jobActions.setClearContractId());
+  }, []);
 
   useEffect(() => {
     setToken(auth);
@@ -45,15 +45,35 @@ useEffect(()=>{
     setWelcome((prev) => !prev);
   }, [enter]);
 
+  useEffect(() => {
+    const hasReloaded = sessionStorage.getItem("hasReloaded");
+
+    if (hastoken === false && !hasReloaded) {
+      sessionStorage.setItem("hasReloaded", "true");
+      window.location.reload();
+    }
+  }, [hastoken]);
+
   return (
     <>
       <div className="overflow-x-hidden">
-        <SearchBar flag={flag} setFlag={setFlag}  />
+        <SearchBar flag={flag} setFlag={setFlag} />
         {welcome && enter && <Welcome title={`${userName} عزیز، خوش آمدید.`} />}
         <SwiperTopHomePage data={data} />
         {!token && <EnterBox />}
-        {!token&&<LastNews data={data} />}
-        {token&&<OfferList/>}
+        {!token && <LastNews data={data} />}
+        {token && (
+          <div>
+            <div className="flex justify-between mx-[10%] mt-[7%] my-0 border-b border-b-[#eee] pb-[1%] ">
+              <span className="text-[#555555] text-[18px] font-bold">
+                آخرین آگهی‌ها
+              </span>
+            </div>
+            <div dir="rtl" className="w-[80%] mx-auto mt-[10%]">
+              <OfferList class={true} jobs={data} />
+            </div>
+          </div>
+        )}
         <SwiperCompanies data={data} />
       </div>
     </>

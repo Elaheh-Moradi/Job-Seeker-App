@@ -15,6 +15,7 @@ export default function OfferCart(props) {
       [id]: !prevState[id], // Toggle the starred state for the specific item
     }));
   };
+  
 
   return (
     <>
@@ -25,9 +26,11 @@ export default function OfferCart(props) {
         )}
         {/* each item of list */}
         <div
-          className={`sm:flex-col flex justify-start py-6 border-[1px] border-t-0 border-[#e7e7e7] border-r-4 ${
-            props.emergency ? "border-r-red-600" : "border-r-[#e7e7e7]"
+          className={`sm:flex-col flex justify-start py-6 border-[1px] border-t-0 border-[#e7e7e7] ${props.class===true?"":border-r-4} 
+              ${
+           props.class===true?"": props.emergency ? "border-r-red-600" : "border-r-[#e7e7e7]"
           }
+
           ${props.index !== props.length - 1 && "pb-5 mb-0"}
           `}
         >

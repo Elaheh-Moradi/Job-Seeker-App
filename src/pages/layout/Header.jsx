@@ -203,6 +203,7 @@ export default function Header() {
                         onClick={()=>{
                           if (userDashboard.length===index+1) {
                             dispatch(authActions.logout())
+                            dispatch(authActions.setHasToken(false))
                             // navigate('/login/user')
                             toggleDropdown()
 

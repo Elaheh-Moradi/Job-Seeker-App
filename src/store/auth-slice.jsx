@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 token:null,
-enter:false
+enter:false,
+hastoken:true
 };
 
 const authSlice = createSlice({
@@ -20,6 +21,9 @@ const authSlice = createSlice({
     },
     setEnter:(state,action)=>{
       state.enter=action.payload
+    },
+    setHasToken:(state,action)=>{
+      state.hastoken=action.payload
     }
   },
 });
