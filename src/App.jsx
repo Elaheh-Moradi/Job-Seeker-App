@@ -8,6 +8,7 @@ import HomePage from "./pages/menu/HomePage.jsx";
 import Test from "./Test.jsx";
 import EnterJobSeeker from "./pages/login/EnterJobSeeker.jsx";
 import RegisterJobSeeker from "./pages/login/RegisterJobSeeker.jsx";
+import TopCompaniesPage from "./pages/TopCompaniesPage.jsx";
 
 
 
@@ -86,6 +87,7 @@ function App() {
           <Route index element={<Navigate to="/home" replace />} />
           <Route path="home" element={<HomePage />} />
           <Route path="search-job" element={<SearchJobPage />} />
+          <Route path="top-companies" element={<TopCompaniesPage />} />
 
         </Route>
 

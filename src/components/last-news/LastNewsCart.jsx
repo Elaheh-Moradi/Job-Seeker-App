@@ -29,7 +29,7 @@ const LastNewsCart = ({
               />
             )}
             <div className="flex flex-col  mr-[3%] my-[5%] h-[100px]">
-              <span className="text-[#c93d31] font-medium ml-[5%] pb-[5%]">
+              <span className={`${emergency?"text-[#c93d31]":"text-[#3ab1e4]"} font-medium ml-[5%] pb-[5%]`}>
                 {jobTitle}
               </span>
               <div className="leading-7">

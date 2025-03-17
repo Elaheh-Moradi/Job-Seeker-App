@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import DefaultImage from "../../../assets/images/organization-icon/Default.webp";
 import styles from "./SwiperTopHomePage.module.css";
-// import useFetch from "../../../hooks/useFetch";
 
 const SwiperTopHomePage = ({ data }) => {
   // const { data } = useFetch("http://localhost:3000/jobOffers");

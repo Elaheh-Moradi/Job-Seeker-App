@@ -8,7 +8,7 @@ const LastNews = ({ data }) => {
   return (
     <div dir="rtl" className="flex flex-col sm:mt-[10%] ">
       <div className="flex justify-between mx-[10%] mt-[7%] my-0 border-b border-b-[#eee] pb-[1%] ">
-        <span className="text-[#555555] text-[18px] font-bold">
+        <span className="text-[#555555] text-[18px] font-medium">
           آخرین آگهی‌ها
         </span>
         <div className="flex items-center justify-start text-[#3ab1e4] text-[14px]">

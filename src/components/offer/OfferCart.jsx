@@ -26,7 +26,7 @@ export default function OfferCart(props) {
         )}
         {/* each item of list */}
         <div
-          className={`sm:flex-col flex justify-start py-6 border-[1px] border-t-0 border-[#e7e7e7] ${props.class===true?"":border-r-4} 
+          className={`sm:flex-col flex justify-start py-6 border-[1px] border-t-0 border-[#e7e7e7] ${props.class===true?"":"border-r-4"} 
               ${
            props.class===true?"": props.emergency ? "border-r-red-600" : "border-r-[#e7e7e7]"
           }
@@ -53,7 +53,7 @@ export default function OfferCart(props) {
             {/* job title */}
             <div
               className={`font-medium text-[18px]  ${
-                props.emergency ? "text-[#c93d31]" : "text-[#3ab1e4]"
+              props.emergency ? "text-[#c93d31]" : "text-[#3ab1e4]"
               }  mb-3`}
             >
               {props.jobTitle}{" "}
