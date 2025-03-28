@@ -12,7 +12,7 @@ const SwiperCompanies = ({ data }) => {
       {/* <div className="mx-[10%] mt-[5%] my-0 border-b border-b-[#eee] pb-[1%] text-[#555555] text-[18px] font-bold">
         آشنایی با شرکت‌ها
       </div> */}
-      <div className="flex justify-between mx-[10%] mt-[7%] my-0 border-b border-b-[#eee] pb-[1%] ">
+      <div className="flex justify-between mx-[10%] mt-[7%] my-0 border-b border-b-[#eee] pb-[1%] sm:mt-[20%] ">
         <span className="text-[#555555] text-[18px] font-medium">
         آشنایی با شرکت‌ها
         </span>

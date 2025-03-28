@@ -64,12 +64,12 @@ export default function HomePage() {
         {!token && <LastNews data={data} />}
         {token && (
           <div>
-            <div className="flex justify-between mx-[10%] mt-[7%] my-0 border-b border-b-[#eee] pb-[1%] ">
+            <div dir="rtl" className="flex justify-between mx-[10%] mt-[7%] my-0 border-b border-b-[#eee] pb-[1%] sm:mt-[30%]">
               <span className="text-[#555555] text-[18px] font-bold">
                 آخرین آگهی‌ها
               </span>
             </div>
-            <div dir="rtl" className="w-[80%] mx-auto mt-[10%]">
+            <div dir="rtl" className="w-[80%] mx-auto mt-[3%]">
               <OfferList class={true} jobs={data} />
             </div>
           </div>

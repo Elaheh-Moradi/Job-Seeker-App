@@ -86,6 +86,33 @@ server.use((req, res, next) => {
   }
 });
 
+// Endpoint to handle marking/unmarking job offers
+server.post("/mark", (req, res) => {
+  const { jobId, isMarked } = req.body;
+  const userId = req.user.id; 
+  if (typeof jobId === "undefined" || typeof isMarked === "undefined") {
+    return res.status(400).json({ error: "Job ID and isMarked are required." });
+  }
+
+  const db = router.db;
+  let mark = db.get("mark").value() || [];
+
+  // Check if the mark already exists
+  const index = mark.findIndex((m) => m.jobId === jobId && m.userId === userId);
+
+  if (index > -1) {
+    // Update the existing record
+    mark[index].isMarked = isMarked;
+  } else {
+    // Add a new mark
+    mark.push({ jobId, userId, isMarked });
+  }
+
+  // Save changes
+  db.set("mark", mark).write();
+  res.status(200).json({ success: true, mark });
+});
+
 server.use(router);
 server.listen(4000, () => {
   console.log("JSON Server is running on http://localhost:4000");

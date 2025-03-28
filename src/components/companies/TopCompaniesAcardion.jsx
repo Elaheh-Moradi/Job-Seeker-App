@@ -32,8 +32,8 @@ const TopCompaniesAcardion = (props) => {
         } `}
       >
         <button
-          className={`w-full text-left p-3 flex justify-between items-center h-20  border-t border-t-gray-200 border-r-4 border-r-gray-200 hover:bg-gray-100 transition ${
-            isOpen ? "bg-gray-100  " : ""
+          className={`w-full text-left p-3 flex justify-between items-center h-20  border-t border-t-gray-200 border-r-4 border-r-gray-200 hover:bg-gray-100 transition sm:h-auto ${
+            isOpen ? "bg-gray-100 " : ""
           } `}
           onClick={() => {
             setIsOpen(!isOpen);
@@ -47,7 +47,7 @@ const TopCompaniesAcardion = (props) => {
           }}
         >
           <div className="flex items-center">
-            <div className=" text-[#999999] ml-4 w-[40px] h-[40px] border-2 border-dashed rounded-full border-gray-300 flex items-center justify-center">
+            <div className=" text-[#999999] ml-4 w-[40px] h-[40px] min-w-[40px] min-h-[40px] border-2 border-dashed rounded-full border-gray-300 flex items-center justify-center ">
               <span className="text-[20px] font-semibold">
                 {convertToPersianNumbers(props.index)}
               </span>
@@ -56,10 +56,10 @@ const TopCompaniesAcardion = (props) => {
               <img
                 src={props.icon}
                 className={`relative bg-white transition-transform duration-500 rounded-sm ease-in-out ${
-                  isMoved ? " translate-x-[-20%] translate-y-[80%]" : ""
+                  isMoved ? " translate-x-[-20%] translate-y-[80%] sm:translate-x-[10%]" : ""
                 } ${
                   isExpanded
-                    ? " border border-gray-200 w-[90px] h-[90px] rounded-sm"
+                    ? " border border-gray-200 w-[90px] h-[90px] rounded-sm shadow-gray-400 shadow-sm"
                     : " w-12 h-12"
                 } `}
               />
@@ -67,17 +67,17 @@ const TopCompaniesAcardion = (props) => {
               <img
                 src={DefaultImage}
                 className={`relative bg-white transition-transform duration-500 rounded-sm ease-in-out ${
-                  isMoved ? " translate-x-[-20%] translate-y-[80%]" : ""
+                  isMoved ? " translate-x-[-20%] translate-y-[80%]  sm:translate-x-[10%]" : ""
                 } ${
                   isExpanded
-                    ? " border border-gray-500 w-[90px] h-[90px] rounded-sm shadow-2xl"
+                    ? " border border-gray-500 w-[90px] h-[90px] rounded-sm shadow-gray-400 shadow-sm"
                     : " w-12 h-12"
                 } `}
               />
             )}
             {
               <span
-                className={` text-[#555555] text-[18px] font-semibold mr-4 whitespace-nowrap transition-all duration-500 ease-in-out flex items-center ${
+                className={` text-[#555555] text-[18px] font-semibold mr-4 whitespace-nowrap transition-all duration-500 ease-in-out flex items-center sm:w-[50%] sm:text-[16px] sm:whitespace-normal sm:font-medium ${
                   isExpanded ? "absolute justify-center right-[25%]" : ""
                 } `}
               >
@@ -85,11 +85,11 @@ const TopCompaniesAcardion = (props) => {
               </span>
             }
           </div>
-          <div className="flex justify-center items-center">
-            <span className="text-yellow-500 ml-[10%] text-[18px] font-semibold">
+          <div className="flex justify-center items-center ">
+            <span className="text-yellow-500 ml-[10%] text-[18px] font-semibold sm:hidden">
               {convertToPersianNumbers(props.avg)}
             </span>
-            <div className="ml-[5%]">
+            <div className="ml-[5%] sm:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -108,7 +108,7 @@ const TopCompaniesAcardion = (props) => {
               </svg>
             </div>
 
-            <span className="text-[#9d9d9d] text-[12px] pl-[2%]">
+            <span className="text-[#9d9d9d] text-[12px] pl-[2%] sm:mr-5">
               {isOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
             </span>
           </div>
@@ -116,11 +116,37 @@ const TopCompaniesAcardion = (props) => {
       </div>
       <div
         className={` bg-white overflow-hidden transition-height duration-500 ease-in-out z-10 ${
-          isOpen ? "h-[320px] mt-[4px] " : "max-h-[0px]"
+          isOpen ? "h-[320px] mt-[4px] sm:h-[612px] " : "max-h-[0px]"
         } `}
       >
-        <div className="flex justify-between">
-          <div className="w-[50%] flex flex-col mt-[12%] mr-[3%]">
+        <div className="flex justify-between sm:flex-col ">
+        {/* star mark on sm mode */}
+          <div className="hidden sm:flex justify-end mt-[10%] ml-[5%]">
+          <div className="flex justify-center items-center ">
+            <span className="text-yellow-500 ml-[10%] text-[18px] font-semibold ">
+              {convertToPersianNumbers(props.avg)}
+            </span>
+            <div className="ml-[5%] ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="3"
+                stroke="currentColor"
+                className={`w-4 h-4 ml-2 
+                   text-yellow-500
+                 `}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+              </svg>
+            </div>
+          </div>
+          </div>
+          <div className="w-[50%] flex flex-col mt-[12%] mr-[3%] sm:mt-[20%] sm:w-full">
             <div className="flex border-b-[1px] border-dashed border-b-gray-300 pb-2">
               <span className="text-[#444444] text-[14px] border-l border-l-gray-400 pl-2">
                 کامپیوتر، فناوری اطلاعات و اینترنت
@@ -153,7 +179,7 @@ const TopCompaniesAcardion = (props) => {
           </div>
           <img
             src={props.image}
-            className="w-[50%] h-[276px] rounded-[3px] mt-[2%] ml-[2%] shadow-gray-500 shadow-sm "
+            className="w-[50%] h-[276px] rounded-[3px] mt-[2%] ml-[2%] shadow-gray-500 shadow-sm sm:w-[90%] sm:m-auto sm:my-[5%]"
           />
         </div>
       </div>

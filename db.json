@@ -35,9 +35,26 @@
       "email": "email5@gmail.com",
       "password": "password5",
       "name": "username5"
+    },
+    {
+      "id": 1742741374886,
+      "email": "email10@gmail.com",
+      "password": "password10",
+      "name": "user10"
     }
   ],
-
+  "mark": [
+    {
+      "jobId": 1,
+      "isMarked": false,
+      "id": 1
+    },
+    {
+      "jobId": 1,
+      "isMarked": false,
+      "id": 2
+    }
+  ],
   "stateOptions": [
     {
       "id": 0,
@@ -116,11 +133,10 @@
       "popularity": 9,
       "diversity": 8,
       "checkResume": 6,
-      "top":true,
-      "employeeNumbers":"100 تا 500 نفر",
+      "top": true,
+      "employeeNumbers": "100 تا 500 نفر",
       "company-image": "./src/assets/images/company-image/1.jpg",
       "brief-info": "شرکت شبکه اطلاع‌رسانی طلا، سکه و ارز مرجعی معتبر برای ارائه نرخ لحظه‌ای طلا، ارز و سکه، تحلیل بازارهای مالی و اخبار اقتصادی با هدف اطلاع‌رسانی دقیق و شفاف است."
-    
     },
     {
       "id": 2,
@@ -141,8 +157,8 @@
       "popularity": 10,
       "diversity": 4,
       "checkResume": 8,
-      "top":true,
-      "employeeNumbers":"501 تا 1000 نفر",
+      "top": true,
+      "employeeNumbers": "501 تا 1000 نفر",
       "company-image": "./src/assets/images/company-image/2.jpg",
       "brief-info": "با تکیه بر نوآوری، تخصص و تعهد، مسیر تحول دیجیتال را هموار می‌سازیم. با خلق راهکارهای هوشمند، مرزهای موفقیت را جابه‌جا می‌کنیم و آینده‌ای روشن‌تر می‌سازیم."
     },
@@ -165,8 +181,8 @@
       "popularity": 5,
       "diversity": 8,
       "checkResume": 7,
-      "top":true,
-      "employeeNumbers":"بیش از 1000 نفر",
+      "top": true,
+      "employeeNumbers": "بیش از 1000 نفر",
       "company-image": "./src/assets/images/company-image/3.jpg",
       "brief-info": "با قدرت خلاقیت، دانش فنی و تعهد، مسیر موفقیت هموار می‌شود. هر پروژه فرصتی برای نوآوری است و هر چالش، گامی به سوی پیشرفت و تحقق رویاهای بزرگ‌تر."
     },
@@ -189,8 +205,8 @@
       "popularity": 4,
       "diversity": 3,
       "checkResume": 5,
-      "top":true,
-      "employeeNumbers":"501 تا 1000 نفر",
+      "top": true,
+      "employeeNumbers": "501 تا 1000 نفر",
       "company-image": "./src/assets/images/company-image/4.jpg",
       "brief-info": " با تلاش مستمر و هدف‌گذاری دقیق، هر چالشی فرصتی برای رشد است و آینده‌ای روشن در انتظار پیشگامان است."
     },
@@ -213,8 +229,8 @@
       "popularity": 6,
       "diversity": 7,
       "checkResume": 5,
-      "top":true,
-      "employeeNumbers":"100 تا 500 نفر",
+      "top": true,
+      "employeeNumbers": "100 تا 500 نفر",
       "company-image": "./src/assets/images/company-image/5.jpg",
       "brief-info": " از قافله عقب افتادن مشکلی است که گریبان بسیار از فناوری‌ها را در داخل کشور گرفته است."
     },
@@ -237,8 +253,8 @@
       "popularity": 9,
       "diversity": 8,
       "checkResume": 6,
-      "top":true,
-      "employeeNumbers":"100 تا 500 نفر",
+      "top": true,
+      "employeeNumbers": "100 تا 500 نفر",
       "company-image": "./src/assets/images/company-image/6.jpg",
       "brief-info": "رؤیاها زمانی به واقعیت تبدیل می‌شوند که جسارت آغاز کردن را داشته باشید. هر قدم، پلی به سوی دستاوردهای بزرگ‌تر است؛ کافی‌ست باور کنید که هیچ محدودیتی جز ذهن خودتان وجود ندارد."
     },
@@ -261,8 +277,8 @@
       "popularity": 8,
       "diversity": 9,
       "checkResume": 6,
-      "top":true,
-      "employeeNumbers":"501 تا 1000 نفر",
+      "top": true,
+      "employeeNumbers": "501 تا 1000 نفر",
       "company-image": "./src/assets/images/company-image/7.jpg",
       "brief-info": "شرکت رد لیمو با تکیه بر نوآوری و تخصص، خدمات طراحی وب، اپلیکیشن و هوشمندسازی را ارائه می‌دهد و با استفاده از فناوری‌های روز، کسب‌وکارها را به سوی تحول دیجیتال هدایت می‌کند."
     },
@@ -285,8 +301,8 @@
       "popularity": 2,
       "diversity": 4,
       "checkResume": 3,
-      "top":true,
-      "employeeNumbers":"بیش از 1000 نفر",
+      "top": true,
+      "employeeNumbers": "بیش از 1000 نفر",
       "company-image": "./src/assets/images/company-image/8.jpg",
       "brief-info": "شرکت زیوش یک داروخانه آنلاین مدرن است که با مجوز رسمی از وزارت بهداشت، محصولات آرایشی، بهداشتی، درمانی و مکمل‌های متنوع را با مشاوره تخصصی و پشتیبانی ۲۴ ساعته ارائه می‌دهد."
     },
@@ -309,8 +325,8 @@
       "popularity": 10,
       "diversity": 7,
       "checkResume": 8,
-      "top":true,
-      "employeeNumbers":"501 تا 1000 نفر",
+      "top": true,
+      "employeeNumbers": "501 تا 1000 نفر",
       "company-image": "./src/assets/images/company-image/9.jpg",
       "brief-info": "شرکت الگوریتم سازان آرن در گرگان، به‌عنوان بخشی از شرکت بین‌المللی Arn Fintech با دفتر مرکزی در استانبول، در حوزه ارائه راه‌حل‌های نوآورانه فناوری مالی فعالیت می‌کند."
     },
@@ -333,8 +349,8 @@
       "popularity": 4,
       "diversity": 5,
       "checkResume": 2,
-      "top":true,
-      "employeeNumbers":"100 تا 500 نفر",
+      "top": true,
+      "employeeNumbers": "100 تا 500 نفر",
       "company-image": "./src/assets/images/company-image/10.jpg",
       "brief-info": "این شرکت با تمرکز بر امنیت سایبری، شناسایی تهدیدات پیشرفته و ارائه راهکارهای نوآورانه، از اطلاعات سازمان‌ها محافظت کرده و بستر دیجیتالی امن و مطمئنی برای کسب‌وکارها فراهم می‌سازد."
     },
@@ -357,8 +373,8 @@
       "popularity": 8,
       "diversity": 8,
       "checkResume": 6,
-      "top":true,
-      "employeeNumbers":"بیش از 1000 نفر",
+      "top": true,
+      "employeeNumbers": "بیش از 1000 نفر",
       "company-image": "./src/assets/images/company-image/11.jpg",
       "brief-info": "این شرکت با ایمان به قدرت نوآوری و تعهد به پیشرفت، هر چالش را فرصتی برای رشد می‌داند. با تلاش مستمر و خلاقیت، مسیر موفقیت را به آینده‌ای روشن‌تر پیوند می‌زند."
     },
@@ -381,8 +397,8 @@
       "popularity": 7,
       "diversity": 8,
       "checkResume": 7,
-      "top":true,
-      "employeeNumbers":"بیش از 1000 نفر",
+      "top": true,
+      "employeeNumbers": "بیش از 1000 نفر",
       "company-image": "./src/assets/images/company-image/12.jpg",
       "brief-info": "ما چشم انتظار پشامدهای آینده نیستیم. مابا انتخاب های هوشمند قواعد بازی آینده را میسازیم."
     },
@@ -405,8 +421,8 @@
       "popularity": 5,
       "diversity": 7,
       "checkResume": 4,
-      "top":true,
-      "employeeNumbers":"501 تا 1000 نفر",
+      "top": true,
+      "employeeNumbers": "501 تا 1000 نفر",
       "company-image": "./src/assets/images/company-image/13.jpg",
       "brief-info": ""
     },
@@ -429,8 +445,8 @@
       "popularity": 9,
       "diversity": 6,
       "checkResume": 6,
-      "top":true,
-      "employeeNumbers":"بیش از 1000 نفر",
+      "top": true,
+      "employeeNumbers": "بیش از 1000 نفر",
       "company-image": "./src/assets/images/company-image/14.jpg",
       "brief-info": ""
     },
@@ -453,8 +469,8 @@
       "popularity": 9,
       "diversity": 10,
       "checkResume": 8,
-      "top":true,
-      "employeeNumbers":"501 تا 1000 نفر",
+      "top": true,
+      "employeeNumbers": "501 تا 1000 نفر",
       "company-image": "./src/assets/images/company-image/15.jpg",
       "brief-info": ""
     },
@@ -477,8 +493,8 @@
       "popularity": 9,
       "diversity": 8,
       "checkResume": 6,
-      "top":true,
-      "employeeNumbers":"100 تا 500 نفر",
+      "top": true,
+      "employeeNumbers": "100 تا 500 نفر",
       "company-image": "./src/assets/images/company-image/16.jpg",
       "brief-info": ""
     },
@@ -501,8 +517,8 @@
       "popularity": 9,
       "diversity": 8,
       "checkResumee": 6,
-      "top":false,
-      "employeeNumbers":"501 تا 1000 نفر",
+      "top": false,
+      "employeeNumbers": "501 تا 1000 نفر",
       "company-image": null,
       "brief-info": ""
     },
@@ -525,7 +541,7 @@
       "popularity": 10,
       "diversity": 4,
       "checkResume": 8,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -548,7 +564,7 @@
       "popularity": 5,
       "diversity": 8,
       "checkResume": 7,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -571,7 +587,7 @@
       "popularity": 4,
       "diversity": 3,
       "checkResume": 5,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -594,7 +610,7 @@
       "popularity": 6,
       "diversity": 7,
       "checkResume": 5,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -617,7 +633,7 @@
       "popularity": 9,
       "diversity": 8,
       "checkResume": 6,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -640,7 +656,7 @@
       "popularity": 8,
       "diversity": 9,
       "checkResume": 6,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -663,7 +679,7 @@
       "popularity": 2,
       "diversity": 4,
       "checkResume": 3,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -686,7 +702,7 @@
       "popularity": 10,
       "diversity": 7,
       "checkResume": 8,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -709,7 +725,7 @@
       "popularity": 4,
       "diversity": 5,
       "checkResume": 2,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -732,7 +748,7 @@
       "popularity": 8,
       "diversity": 8,
       "checkResume": 6,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -755,7 +771,7 @@
       "popularity": 7,
       "diversity": 8,
       "checkResume": 7,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -778,7 +794,7 @@
       "popularity": 5,
       "diversity": 7,
       "checkResume": 4,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -801,7 +817,7 @@
       "popularity": 9,
       "diversity": 6,
       "checkResume": 6,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -824,7 +840,7 @@
       "popularity": 9,
       "diversity": 10,
       "checkResume": 8,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     },
@@ -847,7 +863,7 @@
       "popularity": 9,
       "diversity": 8,
       "checkResume": 6,
-      "top":false,
+      "top": false,
       "company-image": null,
       "brief-info": ""
     }

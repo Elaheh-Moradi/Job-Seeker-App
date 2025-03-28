@@ -108,12 +108,14 @@ export default function Header() {
           </li>
           <li className="pt-6 pb-6 pl-3.5 pr-3.5 relative hover:bg-[#555]">
             <span class="absolute top-0 bottom-0 left-0 w-0.5 h-full bg-[rgba(0, 0, 0, .2)] shadow-[0_0px_1px_rgba(255,255,255,0.5)]"></span>
+            <Link to="/top-companies">
             <div class="flex items-center text-[#fff] text-[14px] font-medium leading-relaxed">
               <DiamondRoundedIcon
                 style={{ color: "#fff", fontSize: "1.5rem" }}
               />
               50 شرکت برتر
             </div>
+            </Link>
             <span class="absolute top-0 bottom-0 right-0 w-0.5 h-full bg-[rgba(0, 0, 0, .2)] shadow-[0_0px_1px_rgba(255,255,255,0.5)]"></span>
           </li>
         </ul>

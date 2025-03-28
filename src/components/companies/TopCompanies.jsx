@@ -22,7 +22,7 @@ const TopCompanies = () => {
   return (
     <div
       dir="rtl"
-      className="border border-gray-300 shadow-md rounded-sm w-[60%] mx-auto my-[2%]"
+      className="border border-gray-300 shadow-md rounded-sm w-[60%] mx-auto my-[2%] sm:w-[90%]"
     >
       {sortList.map((item, index) => (
         <TopCompaniesAcardion

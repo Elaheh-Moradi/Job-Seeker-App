@@ -2,20 +2,45 @@ import BuildingIcon from "../../assets/icons/Building.svg";
 import ContractIcon from "../../assets/icons/contract.svg";
 import PlaceIcon from "@mui/icons-material/Place";
 import Button from "../Button.jsx";
-import DefaulImage from "../../assets/images/organization-icon/Default.webp"
+import DefaulImage from "../../assets/images/organization-icon/Default.webp";
 import { useState } from "react";
+import axios from "axios";
 
 export default function OfferCart(props) {
   const [isStarred, setIsStarred] = useState({});
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleToggleFavorite = (id) => {
+  const token = localStorage.getItem("token");
+
+  const handleToggleFavorite = async (id) => {
     setIsStarred((prevState) => ({
       ...prevState,
       [id]: !prevState[id], // Toggle the starred state for the specific item
     }));
+
+    let isMarked;
+    if (isStarred) {
+      isMarked = false;
+    } else {
+      isMarked = true;
+    }
+    const jobId = id;
+    try {
+      const res = await fetch("http://localhost:3000/mark", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ jobId, isMarked }),
+      });
+
+      const data = await res.json();
+      
+    } catch (error) {
+      console.error("Failed to mark job:", error);
+    }
   };
-  
 
   return (
     <>
@@ -26,10 +51,16 @@ export default function OfferCart(props) {
         )}
         {/* each item of list */}
         <div
-          className={`sm:flex-col flex justify-start py-6 border-[1px] border-t-0 border-[#e7e7e7] ${props.class===true?"":"border-r-4"} 
+          className={`sm:flex-col flex justify-start py-6 border-[1px] border-t-0 border-[#e7e7e7] ${
+            props.class === true ? "" : "border-r-4"
+          } 
               ${
-           props.class===true?"": props.emergency ? "border-r-red-600" : "border-r-[#e7e7e7]"
-          }
+                props.class === true
+                  ? ""
+                  : props.emergency
+                  ? "border-r-red-600"
+                  : "border-r-[#e7e7e7]"
+              }
 
           ${props.index !== props.length - 1 && "pb-5 mb-0"}
           `}
@@ -53,7 +84,7 @@ export default function OfferCart(props) {
             {/* job title */}
             <div
               className={`font-medium text-[18px]  ${
-              props.emergency ? "text-[#c93d31]" : "text-[#3ab1e4]"
+                props.emergency ? "text-[#c93d31]" : "text-[#3ab1e4]"
               }  mb-3`}
             >
               {props.jobTitle}{" "}
@@ -93,7 +124,9 @@ export default function OfferCart(props) {
               <div className="flex text-[#777] text-[13px] font-light sm:text-[#333333] sm:flex-wrap">
                 <img src={ContractIcon} className="ml-1" />
                 <div>{props.contractType}</div>
-                <span class="text-gray-500 sm:text-[#333333] ml-2">({props.salary})</span>
+                <span class="text-gray-500 sm:text-[#333333] ml-2">
+                  ({props.salary})
+                </span>
               </div>
             </div>
           </div>

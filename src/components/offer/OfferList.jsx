@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch.js";
 import Pagination from "../Pagination.jsx";
 import OfferCart from "./OfferCart.jsx";
 import { useEffect, useMemo, useState } from "react";
-
+import { Link, useLocation } from "react-router-dom";
 
 export default function OfferList(props) {
   let PageSize = 5;
@@ -14,7 +14,13 @@ export default function OfferList(props) {
   // const jobs = useSelector((state) => state.job.jobs);
   const tempjobs = useSelector((state) => state.job.tempJobs);
   const tempTypeId = useSelector((state) => state.job.tempTypeId);
+
+  const location = useLocation();
+
   const dispatch = useDispatch();
+
+  const showPagination = location.pathname === "/search-job";
+  const showAll = location.pathname === "/home";
 
   //pagination
   const currentTableData = useMemo(() => {
@@ -70,33 +76,45 @@ export default function OfferList(props) {
             <div className="w-12 h-12 border-4 border-t-transparent border-white rounded-full animate-spin"></div>
           </div>
         )}
-       
+
         {currentTableData.map((cart, index) => (
-          <OfferCart
-            index={index}
-            id={cart.id}
-            length={props.jobs.length}
-            emergency={cart.emergency}
-            imageSrc={cart["image-src"]}
-            jobTitle={cart.jobTitle}
-            duration={cart.duration}
-            organizationTitleFa={cart["organizationTitle-fa"]}
-            organizationTitleEn={cart["organizationTitle-en"]}
-            orgState={cart.orgState}
-            orgCity={cart.orgCity}
-            contractType={cart.contractType}
-            salary={cart.salary}
-            class={props.class}
-          />
+          <>
+            <OfferCart
+              index={index}
+              id={cart.id}
+              length={props.jobs.length}
+              emergency={cart.emergency}
+              imageSrc={cart["image-src"]}
+              jobTitle={cart.jobTitle}
+              duration={cart.duration}
+              organizationTitleFa={cart["organizationTitle-fa"]}
+              organizationTitleEn={cart["organizationTitle-en"]}
+              orgState={cart.orgState}
+              orgCity={cart.orgCity}
+              contractType={cart.contractType}
+              salary={cart.salary}
+              class={props.class}
+            />
+            {showAll && index + 1 === PageSize && (
+              <div  className="flex items-center justify-start text-[#3ab1e4] text-[14px] absolute left-[10%]">
+                <Link to={"/search-job"} className=" whitespace-nowrap">
+                  مشاهده همه آگهی‌ها
+                </Link>
+                <span className="text-[18px] mt-[1%] mr-3">&gt;</span>
+              </div>
+            )}
+          </>
         ))}
       </div>
-      <Pagination
-        className="pagination-bar"
-        currentPage={currentPage}
-        totalCount={props.jobs.length}
-        pageSize={PageSize}
-        onPageChange={(page) => handlePageChange(page)}
-      />
+      {showPagination && (
+        <Pagination
+          className="pagination-bar"
+          currentPage={currentPage}
+          totalCount={props.jobs.length}
+          pageSize={PageSize}
+          onPageChange={(page) => handlePageChange(page)}
+        />
+      )}
     </>
   );
 }
